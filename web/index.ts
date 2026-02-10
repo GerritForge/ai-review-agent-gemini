@@ -164,25 +164,43 @@ class GeminiAiProvider implements AiCodeReviewProvider {
 
   private async chatAsync(
     req: ChatRequest,
-    listener: ChatResponseListener
+    listener: ChatResponseListener,
+    plugin: PluginApi
   ): Promise<void> {
     const apiKey = requireApiKey(listener);
     if (!apiKey) return;
 
-    // Compose a minimal prompt. The prompt can be enriched, for example patch content is not included.
-    // TODO: Enrich the prompt
-    const files = (req.files || [])
-      .slice(0, 50)
-      .map(f => `- ${f.path} (${f.status})`)
-      .join('\n');
-
-    const prompt =
-      `${req.prompt}\n\n` +
-      `Change: ${req.change?.project ?? ''} ${req.change?._number ?? ''}\n` +
-      (files ? `Files (first 50):\n${files}\n` : '');
+    listener.emitResponse(buildChatResponse('_Gathering file contents and calling Gemini...'));
 
     try {
-      listener.emitResponse(buildChatResponse('_Calling Gemini...'));
+      const changeId = req.change?._number;
+      // We'll take the first 10 files to avoid hitting token limits or browser timeouts
+      const filesToReview = (req.files || []).slice(0, 10);
+
+      let diffContext = '';
+
+      for (const file of filesToReview) {
+        if (file.path === '/COMMIT_MSG') continue;
+
+        // Fetch the diff from Gerrit REST API
+        // Endpoint: /changes/{change-id}/revisions/current/files/{file-id}/diff
+        const diff = await plugin.restApi().get(
+          `/changes/${changeId}/revisions/current/files/${encodeURIComponent(file.path)}/diff?context=ALL`
+        );
+
+        // Extract the 'after' lines (the new code)
+        const content = diff.content
+          .map((c: any) => c.ab || c.b) // 'ab' is unchanged, 'b' is new content
+          .flat()
+          .join('\n');
+
+        diffContext += `\n--- File: ${file.path} ---\n${content}\n`;
+      }
+
+      const prompt =
+        `${req.prompt}\n\n` +
+        `Context: This is a code review for change ${changeId}.\n` +
+        `Code Content:\n${diffContext}`;
 
       const model = req.model_name || DEFAULT_MODEL;
       const text = await callGeminiGenerateContent({apiKey, model, prompt});
@@ -190,15 +208,22 @@ class GeminiAiProvider implements AiCodeReviewProvider {
       listener.emitResponse(buildChatResponse(text));
       listener.done();
     } catch (e) {
-      listener.emitError(e instanceof Error ? e.message : 'Unknown error');
+      listener.emitError(e instanceof Error ? e.message : 'Error fetching patch content');
       listener.done();
     }
   }
 }
 
 function install(plugin: PluginApi) {
-  // Gerrit master requires register() only once.  [oai_citation:4‡gerrit.googlesource.com](https://gerrit.googlesource.com/gerrit/%2B/refs/heads/master/polygerrit-ui/app/api/ai-code-review.ts)
-  plugin.aiCodeReview().register(new GeminiAiProvider());
+  const provider = new GeminiAiProvider();
+
+  // Override the chat method to pass the plugin instance
+  provider.chat = (req, listener) => {
+    // @ts-ignore - TODO: reaching into private, there mught might be better way of doing it
+    provider.chatAsync(req, listener, plugin);
+  };
+
+  plugin.aiCodeReview().register(provider);
 }
 
 window.Gerrit.install(install);
