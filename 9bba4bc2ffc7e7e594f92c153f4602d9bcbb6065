@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f8d9b68_230b2374",
+        "filename": "src/index.ts",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-10T22:20:41Z",
+      "side": 1,
+      "message": "The web resources are typically in the `/web` folder for Gerrit plugins.",
+      "revId": "9bba4bc2ffc7e7e594f92c153f4602d9bcbb6065",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f26d167_d433a2f8",
+        "filename": "src/index.ts",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-10T22:20:41Z",
+      "side": 1,
+      "message": "Missing `import \u0027@gerritcodereview/typescript-api/gerrit\u0027;`",
+      "revId": "9bba4bc2ffc7e7e594f92c153f4602d9bcbb6065",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0679fa0_afdc6e3d",
+        "filename": "src/index.ts",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-10T22:20:41Z",
+      "side": 1,
+      "message": "\u0027Action\u0027 is declared but never used",
+      "revId": "9bba4bc2ffc7e7e594f92c153f4602d9bcbb6065",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d30c3704_138d3281",
+        "filename": "src/index.ts",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-10T22:20:41Z",
+      "side": 1,
+      "message": "This is unknown, need to be imported.",
+      "range": {
+        "startLine": 204,
+        "startChar": 7,
+        "endLine": 204,
+        "endChar": 13
+      },
+      "revId": "9bba4bc2ffc7e7e594f92c153f4602d9bcbb6065",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
