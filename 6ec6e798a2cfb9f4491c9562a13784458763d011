@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e58f0cb_0b9e1911",
+        "filename": "web/index.ts",
+        "patchSetId": 6
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-11T06:23:21Z",
+      "side": 1,
+      "message": "This now to be adapted as the `chatAsync()` requires 3 arguments.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 39
+      },
+      "revId": "6ec6e798a2cfb9f4491c9562a13784458763d011",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
