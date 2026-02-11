@@ -20,6 +20,10 @@ import type {
   Models,
 } from '@gerritcodereview/typescript-api/ai-code-review';
 import type {DiffInfo} from '@gerritcodereview/typescript-api/diff';
+import {
+  HELP_ME_REVIEW_PROMPT,
+  IMPROVE_COMMIT_MESSAGE,
+} from './prompts';
 
 const DEFAULT_MODEL = 'gemini-2.5-flash';
 const LS_API_KEY = 'GERRIT_GEMINI_API_KEY';
@@ -141,6 +145,20 @@ class GeminiAiProvider implements AiCodeReviewProvider {
       ],
       default_model_id: DEFAULT_MODEL,
       documentation_url: 'https://ai.google.dev/api/generate-content',
+      custom_actions: [
+        {
+          id: 'review-change',
+          display_text: 'Help me with review',
+          enable_send_without_input: true,
+          initial_user_prompt: HELP_ME_REVIEW_PROMPT,
+        },
+        {
+          id: 'review-commit',
+          display_text: 'Improve commit message',
+          enable_send_without_input: true,
+          initial_user_prompt: IMPROVE_COMMIT_MESSAGE,
+        },
+      ],
     };
   }
 
@@ -149,16 +167,16 @@ class GeminiAiProvider implements AiCodeReviewProvider {
     return Promise.resolve({
       actions: [
         {
-          id: 'review',
-          display_text: 'Review change',
+          id: 'review-change',
+          display_text: 'Help me with review',
           enable_send_without_input: true,
-          initial_user_prompt: 'Please review this code change.',
+          initial_user_prompt: HELP_ME_REVIEW_PROMPT,
         },
         {
-          id: 'explain',
-          display_text: 'Explain change',
+          id: 'review-commit',
+          display_text: 'Improve commit message',
           enable_send_without_input: true,
-          initial_user_prompt: 'Explain this code change.',
+          initial_user_prompt: IMPROVE_COMMIT_MESSAGE,
         },
       ],
       default_action_id: 'review',
@@ -182,6 +200,7 @@ class GeminiAiProvider implements AiCodeReviewProvider {
       const changeId = req.change?._number;
       // We'll take the first 10 files to avoid hitting token limits or browser timeouts
       const filesToReview = (req.files || []).slice(0, 10);
+      const patchPlaceholder = "{{patch}}";
 
       let diffContext = '';
 
@@ -203,11 +222,11 @@ class GeminiAiProvider implements AiCodeReviewProvider {
         diffContext += `\n--- File: ${file.path} ---\n${content}\n`;
       }
 
-      const prompt =
+      const prompt = req.prompt.includes(patchPlaceholder) ?
+        req.prompt.replace(patchPlaceholder, diffContext) :
         `${req.prompt}\n\n` +
         `Context: This is a code review for change ${changeId}.\n` +
         `Code Content:\n${diffContext}`;
-
       const model = req.model_name || DEFAULT_MODEL;
       const text = await callGeminiGenerateContent({apiKey, model, prompt});
 
