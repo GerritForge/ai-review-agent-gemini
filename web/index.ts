@@ -20,6 +20,10 @@ import type {
   Models,
 } from '@gerritcodereview/typescript-api/ai-code-review';
 import type {DiffInfo} from '@gerritcodereview/typescript-api/diff';
+import {
+  HELP_ME_REVIEW_PROMPT,
+  IMPROVE_COMMIT_MESSAGE,
+} from './prompts';
 
 const DEFAULT_MODEL = 'gemini-2.5-flash';
 const LS_API_KEY = 'GERRIT_GEMINI_API_KEY';
@@ -141,6 +145,20 @@ class GeminiAiProvider implements AiCodeReviewProvider {
       ],
       default_model_id: DEFAULT_MODEL,
       documentation_url: 'https://ai.google.dev/api/generate-content',
+      custom_actions: [
+                              {
+                                id: 'Help me with review',
+                                display_text: 'Review change',
+                                enable_send_without_input: true,
+                                initial_user_prompt: HELP_ME_REVIEW_PROMPT,
+                              },
+                              {
+                                id: 'Improve commit message',
+                                display_text: 'Explain change',
+                                enable_send_without_input: true,
+                                initial_user_prompt: IMPROVE_COMMIT_MESSAGE,
+                              },
+                            ],
     };
   }
 
@@ -149,16 +167,16 @@ class GeminiAiProvider implements AiCodeReviewProvider {
     return Promise.resolve({
       actions: [
         {
-          id: 'review',
+          id: 'Help me with review',
           display_text: 'Review change',
           enable_send_without_input: true,
-          initial_user_prompt: 'Please review this code change.',
+          initial_user_prompt: HELP_ME_REVIEW_PROMPT,
         },
         {
-          id: 'explain',
+          id: 'Improve commit message',
           display_text: 'Explain change',
           enable_send_without_input: true,
-          initial_user_prompt: 'Explain this code change.',
+          initial_user_prompt: IMPROVE_COMMIT_MESSAGE,
         },
       ],
       default_action_id: 'review',
