@@ -1,6 +1,9 @@
-# ai-review-agent-gemini
+# Gerrit AI Review Agent for Gemini
 
-Implementation of the Gerrit's AI Code Review Agent API on top of Gemini
+Implementation of the Gerrit's AI Code Review Agent API on top of Google's Gemini.
+
+Install this plugin to `$GERRIT_SITE/plugins` and enable the Gerrit AI chat to enjoy
+a side-by-side collaboration with Gemini on the Change screen.
 
 ## Compile and install
 
