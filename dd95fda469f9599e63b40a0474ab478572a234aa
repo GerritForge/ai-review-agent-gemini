@@ -22,6 +22,30 @@
       },
       "revId": "dd95fda469f9599e63b40a0474ab478572a234aa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91104126_a6f70c46",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-12T08:51:37Z",
+      "side": 1,
+      "message": "\u003e 4\n\nSorry, should it be master ?",
+      "parentUuid": "08dd15e8_f563d659",
+      "range": {
+        "startLine": 28,
+        "startChar": 44,
+        "endLine": 28,
+        "endChar": 45
+      },
+      "revId": "dd95fda469f9599e63b40a0474ab478572a234aa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
