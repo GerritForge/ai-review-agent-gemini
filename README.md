@@ -5,6 +5,17 @@ Implementation of the Gerrit's AI Code Review Agent API on top of Google's Gemin
 Install this plugin to `$GERRIT_SITE/plugins` and enable the Gerrit AI chat to enjoy
 a side-by-side collaboration with Gemini on the Change screen.
 
+## License
+
+This project is licensed under the **Business Source License 1.1** (BSL 1.1).
+This is a "source-available" license that balances free, open-source-style access to the code
+with temporary commercial restrictions.
+
+* The full text of the BSL 1.1 is available in the [LICENSE](LICENSE) file in this
+  repository.
+* If your intended use case falls outside the **Additional Use Grant** and you require a
+  commercial license, please contact [GerritForge Sales](https://gerritforge.com/contact).
+
 ## Compile and install
 
 ### Prerequisites
@@ -39,14 +50,3 @@ From the browser DevTools console (while browsing Gerrit UI), set your Gemini AP
 ```js
 localStorage.setItem('GERRIT_GEMINI_API_KEY', 'YOUR_KEY_HERE')
 ```
-
-## License
-
-This project is licensed under the **Business Source License 1.1** (BSL 1.1).
-This is a "source-available" license that balances free, open-source-style access to the code
-with temporary commercial restrictions.
-
-* The full text of the BSL 1.1 is available in the [LICENSE](LICENSE) file in this
-  repository.
-* If your intended use case falls outside the **Additional Use Grant** and you require a
-  commercial license, please contact [GerritForge Sales](https://gerritforge.com/contact).
