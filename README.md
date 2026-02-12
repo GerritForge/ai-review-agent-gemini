@@ -16,31 +16,36 @@ with temporary commercial restrictions.
 * If your intended use case falls outside the **Additional Use Grant** and you require a
   commercial license, please contact [GerritForge Sales](https://gerritforge.com/contact).
 
-## Compile and install
+## How to build
 
 ### Prerequisites
 
-- Node.js 18+
-- npm
-- A running Gerrit site (`$SITE_PATH`)
+Gerrit v3.14 source code and Bazelisk 7.6.1 or later.
 
 ### Compile
 
 ```bash
-npm install
-npm run build
+git clone --recurse-submodules -b stable-3.11 https://gerrit.googlesource.com/gerrit
+git clone https://github.com/GerritForge/ai-review-agent-gemini
+
+cd gerrit/plugins
+ln -s ../../ai-review-agent-gemini .
+ln -s ai-review-agent-gemini/external_package.json package.json
+
+cd ..
+bazelisk build plugins/ai-review-agent-gemini
 ```
 
 The build output is:
 
-- `dist/gerrit-gemini-ai.js`
+- `bazel-bin/plugins/ai-review-agent-gemini/ai-review-agent-gemini.jar`
 
 ### Install in Gerrit
 
-Copy the built plugin JavaScript into your Gerrit site's `plugins` directory:
+Copy the built plugin JavaScript into your Gerrit site (`$GERRIT_SITE`) plugins' directory:
 
 ```bash
-cp dist/gerrit-gemini-ai.js "$SITE_PATH/plugins/gerrit-gemini-ai.js"
+cp ai-review-agent-gemini.jar "$GERRIT_SITE/plugins/"
 ```
 
 ### Configure Gemini API key
