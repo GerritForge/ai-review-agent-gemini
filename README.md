@@ -26,9 +26,11 @@ Gerrit v3.14 source code and Bazelisk 7.6.1 or later.
 
 ```bash
 git clone --recurse-submodules https://gerrit.googlesource.com/gerrit
+git clone https://gerrit.googlesource.com/plugins/secure-config
 git clone https://github.com/GerritForge/ai-review-agent-gemini
 
 cd gerrit/plugins
+ln -s ../../secure-config .
 ln -s ../../ai-review-agent-gemini .
 ln -s ai-review-agent-gemini/external_package.json package.json
 
