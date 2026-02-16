@@ -15,6 +15,7 @@ gerrit_plugin(
     srcs = glob(["src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/*.java"]),
     manifest_entries = [
         "Gerrit-PluginName: ai-review-agent-gemini",
+        "Gerrit-Module: com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule",
         "Gerrit-HttpModule: com.gerritforge.gerrit.plugins.ai.gemini.HttpModule",
     ],
     resource_jars = ["//plugins/ai-review-agent-gemini/web:ai-review-agent-gemini"],
