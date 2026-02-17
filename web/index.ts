@@ -29,7 +29,51 @@ import {
 } from './prompts';
 
 const DEFAULT_MODEL = 'gemini-2.5-flash';
-const LS_API_KEY = 'GERRIT_GEMINI_API_KEY';
+const TOKEN_ENDPOINT = '/accounts/self/ai-review-agent-gemini~apiToken';
+
+type TokenFetchResult =
+  | { token: string }
+  | { error: string };
+
+type TokenResponse = {token: string};
+
+function isTokenResponse(r: unknown): r is TokenResponse {
+  return (
+    typeof r === 'object' &&
+    r !== null &&
+    'token' in r &&
+    typeof (r as any).token === 'string'
+  );
+}
+async function fetchApiKeyFromBackend(
+  plugin: PluginApi
+): Promise<TokenFetchResult> {
+  try {
+    const res = await plugin.restApi().get(TOKEN_ENDPOINT);
+
+    if (!isTokenResponse(res)) {
+      return {error: 'Unexpected response from token endpoint'};
+    }
+
+    return {token: res.token.trim()};
+  } catch (e) {
+    return {
+      error: `Cannot retrieve Gemini API key. ${e}`,
+    };
+  }
+}
+
+async function requireApiKey(
+  plugin: PluginApi,
+  listener: ChatResponseListener
+): Promise<string | null> {
+  const r = await fetchApiKeyFromBackend(plugin);
+  if ('token' in r) return r.token;
+
+  listener.emitError(r.error);
+  listener.done();
+  return null;
+}
 
 function buildChatResponse(text: string): ChatResponse {
   return {
@@ -38,23 +82,6 @@ function buildChatResponse(text: string): ChatResponse {
     citations: [], // TODO: populate citations
     timestamp_millis: Date.now(),
   };
-}
-
-function getApiKey(): string | null {
-  return window.localStorage.getItem(LS_API_KEY);
-}
-
-function requireApiKey(listener: ChatResponseListener): string | null {
-  const key = getApiKey();
-  if (!key) {
-    listener.emitError(
-      `Missing Gemini API key. Set it in DevTools console:\n` +
-        `localStorage.setItem('${LS_API_KEY}', 'YOUR_KEY_HERE')`
-    );
-    listener.done();
-    return null;
-  }
-  return key;
 }
 
 async function callGeminiGenerateContent(args: {
@@ -194,7 +221,7 @@ class GeminiAiProvider implements AiCodeReviewProvider {
     req: ChatRequest,
     listener: ChatResponseListener
   ): Promise<void> {
-    const apiKey = requireApiKey(listener);
+    const apiKey = await requireApiKey(this.plugin, listener);
     if (!apiKey) return;
 
     listener.emitResponse(buildChatResponse('_Gathering file contents and calling Gemini...'));
