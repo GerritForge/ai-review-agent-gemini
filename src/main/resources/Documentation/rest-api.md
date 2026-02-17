@@ -34,6 +34,25 @@ If the key is empty or invalid, the request will fail with:
 
 ---
 
+### GET /accounts/self/geminiToken
+
+Retrieves the currently set Gemini API token for the user.
+
+**Request:**
+```http
+  GET /a/accounts/self/geminiToken HTTP/1.0
+```
+
+**Response:**
+```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json; charset=UTF-8
+
+  {
+    "token": "my-secret-gemini-token"
+  }
+```
+
 ## Security Considerations
 
 - Only the authenticated user can manage their own key.

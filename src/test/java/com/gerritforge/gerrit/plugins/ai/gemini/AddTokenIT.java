@@ -11,8 +11,8 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.AddToken.GEMINI_PREFIX;
-import static com.gerritforge.gerrit.plugins.ai.gemini.AddToken.getTokenPrefix;
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.GEMINI_PREFIX;
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
 
