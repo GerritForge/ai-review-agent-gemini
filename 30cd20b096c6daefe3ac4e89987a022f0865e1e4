@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c160605_10fad45f",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-17T11:22:09Z",
+      "side": 1,
+      "message": "This logic is in common with the endpoint writing the token. Factor it out",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 84
+      },
+      "revId": "30cd20b096c6daefe3ac4e89987a022f0865e1e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3174f705_0bf4d273",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-17T11:22:09Z",
+      "side": 1,
+      "message": "Might be better extracting the part after the user prefix instead of searching for the last `_`",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "30cd20b096c6daefe3ac4e89987a022f0865e1e4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
