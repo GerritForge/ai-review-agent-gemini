@@ -11,8 +11,8 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.AddToken.API_TOKEN_ENDPOINT;
-import static com.gerritforge.gerrit.plugins.ai.gemini.AddToken.getTokenPrefix;
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.API_TOKEN_ENDPOINT;
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
 
@@ -65,12 +65,12 @@ public class AddTokenIT extends LightweightPluginDaemonTest {
     Optional<ExternalId> optExtId =
         extIds.stream()
             .filter(e -> SCHEME_EXTERNAL.equals(e.key().scheme()))
-            .filter(e -> e.key().id().startsWith(getTokenPrefix(accountId) + ":"))
+            .filter(e -> e.key().id().startsWith(getTokenPrefix(accountId)))
             .findFirst();
 
     assertThat(optExtId.isPresent()).isTrue();
     String storedId = optExtId.get().key().id();
-    String encodedPart = storedId.substring(getTokenPrefix(accountId).length() + 1);
+    String encodedPart = storedId.substring(getTokenPrefix(accountId).length());
     assertThat(codec.decode(encodedPart)).isEqualTo(token);
   }
 

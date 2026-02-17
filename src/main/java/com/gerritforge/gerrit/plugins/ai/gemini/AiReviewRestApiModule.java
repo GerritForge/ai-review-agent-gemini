@@ -11,7 +11,7 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.AddToken.API_TOKEN_ENDPOINT;
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.API_TOKEN_ENDPOINT;
 
 import com.google.gerrit.extensions.restapi.RestApiModule;
 import com.google.gerrit.server.account.AccountResource;
@@ -23,6 +23,7 @@ public class AiReviewRestApiModule extends RestApiModule {
   @Override
   protected void configure() {
     put(AccountResource.ACCOUNT_KIND, API_TOKEN_ENDPOINT).to(AddToken.class);
+    get(AccountResource.ACCOUNT_KIND, API_TOKEN_ENDPOINT).to(GetToken.class);
 
     bind(Codec.class).to(PBECodec.class);
   }
