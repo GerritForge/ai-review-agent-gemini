@@ -34,6 +34,36 @@ If the key is empty or invalid, the request will fail with:
 
 ---
 
+### GET /accounts/self/ai-review-agent-gemini~apiToken
+
+Retrieves the currently set Gemini API token for the user.
+
+**Request:**
+```http
+  GET /a/accounts/self/ai-review-agent-gemini~apiToken HTTP/1.0
+```
+
+**Response:**
+```http
+  HTTP/1.1 200 OK
+  Content-Type: application/json; charset=UTF-8
+
+  "my-secret-gemini-token"
+```
+
+Enforce token privacy:
+
+**Request:**
+```http
+  GET /a/accounts/<other-user-accountid>/ai-review-agent-gemini~apiToken HTTP/1.0
+```
+
+**Response:**
+```http
+  HTTP/1.1 403 OK
+  Content-Type: application/json; charset=UTF-8
+```
+
 ## Security Considerations
 
 - Only the authenticated user can manage their own key.
