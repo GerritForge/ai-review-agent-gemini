@@ -22,6 +22,7 @@ public class AiReviewRestApiModule extends RestApiModule {
   @Override
   protected void configure() {
     put(ACCOUNT_KIND, "geminiToken").to(AddToken.class);
+    get(ACCOUNT_KIND, "geminiToken").to(GetToken.class);
 
     bind(Codec.class).to(PBECodec.class);
   }
