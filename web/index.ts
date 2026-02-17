@@ -29,7 +29,32 @@ import {
 } from './prompts';
 
 const DEFAULT_MODEL = 'gemini-2.5-flash';
-const LS_API_KEY = 'GERRIT_GEMINI_API_KEY';
+const TOKEN_ENDPOINT = '/accounts/self/geminiToken';
+
+async function fetchApiKeyFromBackend(plugin: PluginApi): Promise<string | null> {
+
+  try {
+    const res = await plugin.restApi().get(TOKEN_ENDPOINT)
+    return typeof res === 'string' ? res.trim() : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function requireApiKey(
+  plugin: PluginApi,
+  listener: ChatResponseListener
+): Promise<string | null> {
+  const fromBackend = await fetchApiKeyFromBackend(plugin);
+  if (fromBackend) return fromBackend;
+
+  listener.emitError(
+    `Missing Gemini API key. Store it server-side via:\n` +
+      `PUT /a${TOKEN_ENDPOINT} {\"token\": \"YOUR_KEY_HERE\"}`
+  );
+  listener.done();
+  return null;
+}
 
 function buildChatResponse(text: string): ChatResponse {
   return {
@@ -38,23 +63,6 @@ function buildChatResponse(text: string): ChatResponse {
     citations: [], // TODO: populate citations
     timestamp_millis: Date.now(),
   };
-}
-
-function getApiKey(): string | null {
-  return window.localStorage.getItem(LS_API_KEY);
-}
-
-function requireApiKey(listener: ChatResponseListener): string | null {
-  const key = getApiKey();
-  if (!key) {
-    listener.emitError(
-      `Missing Gemini API key. Set it in DevTools console:\n` +
-        `localStorage.setItem('${LS_API_KEY}', 'YOUR_KEY_HERE')`
-    );
-    listener.done();
-    return null;
-  }
-  return key;
 }
 
 async function callGeminiGenerateContent(args: {
@@ -194,7 +202,7 @@ class GeminiAiProvider implements AiCodeReviewProvider {
     req: ChatRequest,
     listener: ChatResponseListener
   ): Promise<void> {
-    const apiKey = requireApiKey(listener);
+    const apiKey = await requireApiKey(this.plugin, listener);
     if (!apiKey) return;
 
     listener.emitResponse(buildChatResponse('_Gathering file contents and calling Gemini...'));
