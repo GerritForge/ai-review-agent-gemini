@@ -11,18 +11,13 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import com.google.gerrit.extensions.restapi.RestApiModule;
-import com.google.gerrit.server.account.AccountResource;
-import com.googlesource.gerrit.plugins.secureconfig.Codec;
-import com.googlesource.gerrit.plugins.secureconfig.PBECodec;
+import com.google.gerrit.entities.Account;
 
-public class AiReviewRestApiModule extends RestApiModule {
+class TokenUtils {
+  static final String API_TOKEN_ENDPOINT = "ai-review-agent-gemini~geminiToken";
+  static final String GEMINI_PREFIX = "gemini";
 
-  @Override
-  protected void configure() {
-    put(AccountResource.ACCOUNT_KIND, "geminiToken").to(AddToken.class);
-    get(AccountResource.ACCOUNT_KIND, "geminiToken").to(GetToken.class);
-
-    bind(Codec.class).to(PBECodec.class);
+  static String getTokenPrefix(Account.Id accountId) {
+    return String.join(":", GEMINI_PREFIX, accountId.toString());
   }
 }
