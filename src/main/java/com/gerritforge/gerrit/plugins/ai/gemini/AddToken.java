@@ -11,6 +11,7 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
+import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
 import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
 
 import com.google.common.base.Strings;
@@ -35,7 +36,7 @@ import com.google.inject.Provider;
 import com.googlesource.gerrit.plugins.secureconfig.Codec;
 
 public class AddToken implements RestModifyView<AccountResource, AddToken.Input> {
-  public static final String GEMINI_PREFIX = "gemini";
+
   private final Provider<CurrentUser> currentUser;
   private final Provider<AccountsUpdate> accountsUpdateProvider;
   private final ExternalIds externalIds;
@@ -116,9 +117,5 @@ public class AddToken implements RestModifyView<AccountResource, AddToken.Input>
 
   static String getFormattedUserToken(String token, Account.Id accountId, Codec codec) {
     return String.join(":", getTokenPrefix(accountId), codec.encode(token));
-  }
-
-  static String getTokenPrefix(Account.Id accountId) {
-    return String.join(":", GEMINI_PREFIX, accountId.toString());
   }
 }
