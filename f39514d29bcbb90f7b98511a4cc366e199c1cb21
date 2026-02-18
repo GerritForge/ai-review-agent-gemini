@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89d6bad9_f22573fc",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "nit: package protected?",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e73f6b76_0d2b564b",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "nit: missing header",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc4bbda3_bae6546e",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "nit: package protected?",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b486f1f2_7d563257",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "question: can\u0027t remember if that checks also security config as `password` should probably land there... ignore if it does",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37433481_379416c9",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "question: probably makes sense to have it generated per-gerrit-instance and stored in plugin\u0027s config, WDYT? - could be done in the follow up",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 87
+      },
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a9130c8_12386884",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-02-18T07:41:17Z",
+      "side": 1,
+      "message": "nit: is this needed?",
+      "range": {
+        "startLine": 44,
+        "startChar": 48,
+        "endLine": 44,
+        "endChar": 55
+      },
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
