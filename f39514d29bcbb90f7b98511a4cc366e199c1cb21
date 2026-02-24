@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69e40a6a_aeca2ed4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89d6bad9_f22573fc",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e73f6b76_0d2b564b",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-02-18T07:41:17Z",
       "side": 1,
       "message": "nit: missing header",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67d650f0_ce09644a",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e73f6b76_0d2b564b",
       "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b966631_2a23f7cf",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc4bbda3_bae6546e",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b486f1f2_7d563257",
@@ -65,6 +119,24 @@
       "writtenOn": "2026-02-18T07:41:17Z",
       "side": 1,
       "message": "question: can\u0027t remember if that checks also security config as `password` should probably land there... ignore if it does",
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4134820e_1d7d429f",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "yes it does",
+      "parentUuid": "b486f1f2_7d563257",
       "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -105,6 +177,54 @@
       "writtenOn": "2026-02-18T07:41:17Z",
       "side": 1,
       "message": "nit: is this needed?",
+      "range": {
+        "startLine": 44,
+        "startChar": 48,
+        "endLine": 44,
+        "endChar": 55
+      },
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f2cf825_6ee5c82a",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37433481_379416c9",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 87
+      },
+      "revId": "f39514d29bcbb90f7b98511a4cc366e199c1cb21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "041c76f6_4a13d272",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/PBECodec.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-02-24T13:45:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9130c8_12386884",
       "range": {
         "startLine": 44,
         "startChar": 48,
