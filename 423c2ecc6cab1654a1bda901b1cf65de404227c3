@@ -306,6 +306,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb01665a_9021c16a",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-27T11:39:50Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3e1e6259_e8312e12",
+      "range": {
+        "startLine": 119,
+        "startChar": 26,
+        "endLine": 119,
+        "endChar": 32
+      },
+      "revId": "423c2ecc6cab1654a1bda901b1cf65de404227c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2645cad_74eb5482",
