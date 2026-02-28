@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "218c30d3_503d4c64",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-28T12:13:13Z",
+      "side": 1,
+      "message": "This isn\u0027t needed: the permission check is done later on at L79.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 5
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e491e246_9c0043dd",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-02-28T12:13:13Z",
+      "side": 1,
+      "message": "```suggestion\n    if (!currentUser.get().hasSameAccountId(callerId)) {\n      permissionBackend.currentUser().check(GlobalPermission.ADMINISTRATE_SERVER);\n    }\n```",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 5
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
