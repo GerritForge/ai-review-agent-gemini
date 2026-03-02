@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "487f76c7_42116659",
+        "filename": "README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Good catch",
+      "parentUuid": "7fabd6e8_d50ed7db",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "218c30d3_503d4c64",
@@ -31,6 +49,30 @@
       "writtenOn": "2026-02-28T12:13:13Z",
       "side": 1,
       "message": "This isn\u0027t needed: the permission check is done later on at L79.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 5
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec6d3cdb_43bdb9f2",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "218c30d3_503d4c64",
       "range": {
         "startLine": 72,
         "startChar": 0,
@@ -64,6 +106,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c8f28d8_a187f35f",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e491e246_9c0043dd",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 5
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "768f1814_495084fe",
@@ -77,6 +143,30 @@
       "writtenOn": "2026-03-02T08:54:03Z",
       "side": 1,
       "message": "Input cannot be null, as the parameter isn\u0027t nullable.",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 21
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b29dd402_b5bd014c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "768f1814_495084fe",
       "range": {
         "startLine": 84,
         "startChar": 8,
@@ -110,6 +200,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e474e8f2_0dfb34b0",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34ca6715_daf10cec",
+      "range": {
+        "startLine": 104,
+        "startChar": 20,
+        "endLine": 104,
+        "endChar": 43
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29f5f62a_e12f81fd",
@@ -123,6 +237,24 @@
       "writtenOn": "2026-03-02T08:54:03Z",
       "side": 1,
       "message": "```suggestion\nimport static com.google.gerrit.server.account.AccountResource;\n```",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a81f3491_564c1792",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29f5f62a_e12f81fd",
       "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -144,6 +276,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5cc87fc_9919d9aa",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5be879c0_d6a63f27",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "128bb014_f0833683",
@@ -157,6 +307,30 @@
       "writtenOn": "2026-03-02T08:54:03Z",
       "side": 1,
       "message": "This is stale, as we don\u0027t use a custom encoding logic here but reuse the SecureConfig\u0027s plugin encryption/decryption.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 121
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d37a899_883e5cb5",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "128bb014_f0833683",
       "range": {
         "startLine": 4,
         "startChar": 0,
@@ -190,6 +364,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eae11435_0d3765fc",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bad2827_1d00d388",
+      "range": {
+        "startLine": 21,
+        "startChar": 34,
+        "endLine": 21,
+        "endChar": 62
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4c8b8d2_52985156",
@@ -213,6 +411,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "735b48d3_9bdc0621",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "I thought the same, but interestingly enough, it works even without the plugin name.\nHowever, I will add the plugin name to keep it consistent with the usual convention.",
+      "parentUuid": "a4c8b8d2_52985156",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4cfb7e20_f1dfdec8",
@@ -226,6 +448,30 @@
       "writtenOn": "2026-03-02T08:54:03Z",
       "side": 1,
       "message": "`Sets` and `updates` are synonyms.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 15
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be4a15b4_7ecb6ee2",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T11:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4cfb7e20_f1dfdec8",
       "range": {
         "startLine": 17,
         "startChar": 0,
