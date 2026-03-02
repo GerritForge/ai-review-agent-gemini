@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fabd6e8_d50ed7db",
+        "filename": "README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "This isn\u0027t enough, we also need the `secure-config` plugin cloned and linked into the `/plugins` directory.",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "218c30d3_503d4c64",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
         "patchSetId": 8
@@ -42,6 +59,178 @@
         "startChar": 0,
         "endLine": 82,
         "endChar": 5
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "768f1814_495084fe",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "Input cannot be null, as the parameter isn\u0027t nullable.",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 21
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34ca6715_daf10cec",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "The `id()` cannot be null, so this check is redundant.",
+      "range": {
+        "startLine": 104,
+        "startChar": 20,
+        "endLine": 104,
+        "endChar": 43
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29f5f62a_e12f81fd",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "```suggestion\nimport static com.google.gerrit.server.account.AccountResource;\n```",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5be879c0_d6a63f27",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiReviewRestApiModule.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "Best to show that `ACCOUNT_KIND` belongs to the `AccountResource` here.\n\n\n\n```suggestion\n    put(AccountResource.ACCOUNT_KIND, \"geminiToken\").to(AddToken.class);\n```",
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "128bb014_f0833683",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "This is stale, as we don\u0027t use a custom encoding logic here but reuse the SecureConfig\u0027s plugin encryption/decryption.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 121
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bad2827_1d00d388",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "Are you sure that the URL path is correct? AFAIK it has the form of `\u003cplugins\u003e~\u003cplugin\u003e`",
+      "range": {
+        "startLine": 21,
+        "startChar": 34,
+        "endLine": 21,
+        "endChar": 62
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4c8b8d2_52985156",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "Are you sure about the URL path? AFAIK it has the form of `\u003cplugin\u003e~\u003cgeminiToken\u003e`, otherwise the API call isn\u0027t processed as coming from a plugin but as it was from Gerrit.",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cfb7e20_f1dfdec8",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-02T08:54:03Z",
+      "side": 1,
+      "message": "`Sets` and `updates` are synonyms.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 15
       },
       "revId": "dd3955951983fcaea9cd7d3e0c40597b16430b3e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
