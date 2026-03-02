@@ -47,6 +47,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cdbaea8_bb9ed6df",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T18:56:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a60cfcbf_27d6c053",
+      "range": {
+        "startLine": 39,
+        "startChar": 74,
+        "endLine": 39,
+        "endChar": 85
+      },
+      "revId": "fe6fd51d411bfc5952458ef1113f3c9ffe3eff4c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc42ecc1_8a6de8a5",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T18:56:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "587251b6_e71ca23b",
+      "range": {
+        "startLine": 39,
+        "startChar": 51,
+        "endLine": 39,
+        "endChar": 73
+      },
+      "revId": "fe6fd51d411bfc5952458ef1113f3c9ffe3eff4c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cf583eb_d158bdf0",
@@ -60,6 +108,30 @@
       "writtenOn": "2026-03-02T17:20:56Z",
       "side": 1,
       "message": "I believe the `gemini` is now redundant in the name. I don\u0027t believe the gemini plugin would ever store a non-gemini token ;-)\n\n\n\n```suggestion\n**PUT** `/a/accounts/self/ai-review-agent-gemini~apiToken`\n```",
+      "range": {
+        "startLine": 15,
+        "startChar": 49,
+        "endLine": 15,
+        "endChar": 55
+      },
+      "revId": "fe6fd51d411bfc5952458ef1113f3c9ffe3eff4c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "464a035d_79cd936f",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-02T18:56:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cf583eb_d158bdf0",
       "range": {
         "startLine": 15,
         "startChar": 49,
