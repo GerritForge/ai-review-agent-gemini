@@ -16,6 +16,24 @@
       "message": "```suggestion\nEnforce token privacy:\n```",
       "revId": "3cd8a1d67a2f0be844ea197160c914e8e40560dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "530681c5_17a28b10",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-03T08:33:29Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "4ee88cb2_8797e435",
+      "revId": "3cd8a1d67a2f0be844ea197160c914e8e40560dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
