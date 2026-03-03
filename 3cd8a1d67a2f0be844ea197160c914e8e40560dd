@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ee88cb2_8797e435",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-03T01:30:26Z",
+      "side": 1,
+      "message": "```suggestion\nEnforce token privacy:\n```",
+      "revId": "3cd8a1d67a2f0be844ea197160c914e8e40560dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
