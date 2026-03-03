@@ -12,6 +12,8 @@
  * limitations under the License.
  */
 
+import {css, html, LitElement} from 'lit';
+import {customElement, property, state} from 'lit/decorators.js';
 import '@gerritcodereview/typescript-api/gerrit';
 import type {PluginApi} from '@gerritcodereview/typescript-api/plugin';
 import type {
@@ -269,6 +271,129 @@ class GeminiAiProvider implements AiCodeReviewProvider {
   }
 }
 
+@customElement('gr-gemini-api-token')
+class GrGeminiApiToken extends LitElement {
+  @property({ type: Object }) plugin!: PluginApi;
+
+  @state() private token = '';
+  @state() private saving = false;
+
+  override firstUpdated() {
+    this.loadToken();
+  }
+
+  async loadToken() {
+    try {
+      const res = await fetchApiKeyFromBackend(this.plugin);
+      if ('token' in res) {
+        this.token = res.token;
+      }
+    } catch (e) {
+      console.warn('Gemini token not set yet');
+    }
+  }
+
+  async saveToken() {
+    this.saving = true;
+    try {
+      await this.plugin.restApi().put(TOKEN_ENDPOINT, {
+        token: this.token.trim()
+      });
+    } finally {
+      this.saving = false;
+    }
+  }
+
+  static override get styles() {
+    return css`
+      section {
+        display: flex;
+        margin-bottom: var(--spacing-m);
+      }
+      .title {
+        width: 20em; /* Match Gerrit's standard width */
+        font-weight: var(--font-weight-bold);
+        color: var(--primary-text-color);
+      }
+      .value {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-m);
+        color: var(--primary-text-color);
+      }
+      md-outlined-text-field {
+        width: 20em;
+        background-color: var(--view-background-color);
+        color: var(--primary-text-color);
+        --md-sys-color-primary: var(--primary-text-color);
+        --md-sys-color-on-surface: var(--primary-text-color);
+        --md-sys-color-on-surface-variant: var(--deemphasized-text-color);
+        --md-outlined-text-field-label-text-color: var(--deemphasized-text-color);
+        --md-outlined-text-field-focus-label-text-color: var(
+          --deemphasized-text-color
+        );
+        --md-outlined-text-field-hover-label-text-color: var(
+          --deemphasized-text-color
+        );
+        --md-outlined-text-field-container-shape: var(--border-radius);
+        --md-outlined-text-field-focus-outline-color: var(
+          --prominent-border-color,
+          var(--border-color)
+        );
+        --md-outlined-text-field-outline-color: var(
+          --prominent-border-color,
+          var(--border-color)
+        );
+        --md-outlined-text-field-hover-outline-color: var(
+          --prominent-border-color,
+          var(--border-color)
+        );
+        --md-sys-color-outline: var(
+          --prominent-border-color,
+          var(--border-color)
+        );
+      }
+      md-outlined-text-field.showBlueFocusBorder {
+        --md-outlined-text-field-focus-outline-width: 2px;
+        --md-outlined-text-field-focus-outline-color: var(
+          --input-focus-border-color
+        );
+      }
+    `;
+  }
+
+  override render() {
+    return html`
+      <section>
+        <label class="title" for="geminiToken">Gemini API Token</label>
+        <span class="value">
+          <md-outlined-text-field
+            type="password"
+            id="geminiToken"
+            class="showBlueFocusBorder"
+            .value=${this.token}
+            ?disabled=${this.saving}
+            @input=${(e: Event) => (this.token = (e.target as HTMLInputElement).value)}
+          ></md-outlined-text-field>
+          <gr-button @click=${this.saveToken} ?disabled=${this.saving}>
+            Save Token
+          </gr-button>
+        </span>
+      </section>
+    `;
+  }
+}
+
+// TypeScript's strict build used by Gerrit enables `noUnusedLocals`, which
+// triggers TS6196 if a symbol is declared but not referenced in the module.
+// The custom element is actually used through the `@customElement` decorator
+// and by `plugin.registerCustomComponent()`, but the TypeScript compiler
+// cannot detect that usage statically.
+//
+// We reference the symbol with `void GrGeminiApiToken;`, which
+// marks it as "used".
+void GrGeminiApiToken;
+
 function install(plugin: PluginApi) {
   const provider = new GeminiAiProvider(plugin);
 
@@ -279,6 +404,7 @@ function install(plugin: PluginApi) {
   };
 
   plugin.aiCodeReview().register(provider);
+  plugin.registerCustomComponent('profile', 'gr-gemini-api-token');
 }
 
 window.Gerrit.install(install);
