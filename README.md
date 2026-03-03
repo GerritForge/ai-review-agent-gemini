@@ -2,7 +2,7 @@
 
 Implementation of the Gerrit's AI Code Review Agent API on top of Google's Gemini.
 
-Install this plugin to `$GERRIT_SITE/plugins` and enable the Gerrit AI chat to enjoy
+[Install](#install-in-gerrit) this plugin and enable the Gerrit AI chat to enjoy
 a side-by-side collaboration with Gemini on the Change screen.
 
 ## License
@@ -42,10 +42,17 @@ The build output is:
 
 - `bazel-bin/plugins/ai-review-agent-gemini/ai-review-agent-gemini.jar`
 
-### Install in Gerrit
+### [Install in Gerrit](#install-in-gerrit)
 
-Copy the built plugin JavaScript into your Gerrit site (`$GERRIT_SITE`) plugins' directory:
+Copy the built plugin into your Gerrit site (`$GERRIT_SITE`) plugins' directory:
 
 ```bash
 cp ai-review-agent-gemini.jar "$GERRIT_SITE/plugins/"
+```
+
+The AI Review Agent Gemini plugin depends on the [secure-config](https://gerrit.googlesource.com/plugins/secure-config/)
+plugin. Copy it in the (`$GERRIT_SITE`) lib' directory:
+
+```bash
+cp secure-config.jar "$GERRIT_SITE/lib/"
 ```
