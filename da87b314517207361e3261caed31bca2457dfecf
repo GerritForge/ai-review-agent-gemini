@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bdfa20e_cc6de145",
+        "filename": "web/index.ts",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:54:29Z",
+      "side": 1,
+      "message": "What about `gr-gemini-api-token`?",
+      "range": {
+        "startLine": 265,
+        "startChar": 16,
+        "endLine": 265,
+        "endChar": 32
+      },
+      "revId": "da87b314517207361e3261caed31bca2457dfecf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b7d0a42_e5871d01",
+        "filename": "web/index.ts",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:54:29Z",
+      "side": 1,
+      "message": "Tokens should be *write only* and should never be displayed on the UI in cleartext.\nWhy do we need to load the token on the UI?",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 5
+      },
+      "revId": "da87b314517207361e3261caed31bca2457dfecf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed042eca_52875e9d",
+        "filename": "web/index.ts",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:54:29Z",
+      "side": 1,
+      "message": "Leftover?",
+      "revId": "da87b314517207361e3261caed31bca2457dfecf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
