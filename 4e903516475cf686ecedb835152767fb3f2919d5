@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "837c8d1e_a0bcfe3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:49:43Z",
+      "side": 1,
+      "message": "```suggestion\nit from Gerrit via /accounts/self/ai-review-agent-gemini~apiToken instead.\n```",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 10,
+        "endChar": 68
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60373e70_4278f820",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:49:43Z",
+      "side": 1,
+      "message": "This looks fragile, as it assumes that the data type indicates the success or failure.\n\nJust return from the backend a proper JSON, which may also include the `error` field in case of errors.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 5
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea5285ca_dd796024",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:49:43Z",
+      "side": 1,
+      "message": "When do you expect this code path? Would `e` contain any useful information for the user?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 6
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19fcc8ed_7806a809",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-04T22:49:43Z",
+      "side": 1,
+      "message": "The best approach would be to _proxy_ this call through the backend and add the `apiKey` using the user\u0027s authenticated context.\n\nIt can be addressed as a follow-up change.",
+      "range": {
+        "startLine": 252,
+        "startChar": 19,
+        "endLine": 252,
+        "endChar": 76
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
