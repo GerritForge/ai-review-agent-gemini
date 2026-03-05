@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4009d1fe_5927e7d7",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfd1cab3_7f226273",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6572d488_ce8b70ec",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-03-04T22:35:51Z",
       "side": 1,
       "message": "If you consider the `:` as part of the prefix, you would avoid adding it here and also include the `+ 1` at L74.",
+      "range": {
+        "startLine": 61,
+        "startChar": 37,
+        "endLine": 61,
+        "endChar": 68
+      },
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26ef19b8_4d069187",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6572d488_ce8b70ec",
       "range": {
         "startLine": 61,
         "startChar": 37,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7903c57_90093d95",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4e7a4be_823ce94f",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 14
+      },
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9232157d_190daf92",
@@ -83,6 +155,24 @@
       "writtenOn": "2026-03-04T22:35:51Z",
       "side": 1,
       "message": "```suggestion\n    return String.format(\"%s:%s:\", GEMINI_PREFIX, accountId);\n```",
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d635acb_63b0edd9",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/TokenUtils.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9232157d_190daf92",
       "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -104,6 +194,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c98ee6fc_2aa20cb6",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d6a654e_07e722e7",
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4612b442_62868654",
@@ -117,6 +225,30 @@
       "writtenOn": "2026-03-04T22:35:51Z",
       "side": 1,
       "message": "You typically return `FORBIDDEN` if the resource has been denied",
+      "range": {
+        "startLine": 63,
+        "startChar": 15,
+        "endLine": 63,
+        "endChar": 17
+      },
+      "revId": "231824c6d0bd3309ce144bfdb193b77c48479fde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04f2b485_9128b8a9",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T10:44:42Z",
+      "side": 1,
+      "message": "Ops sorry....copy and paste error",
+      "parentUuid": "4612b442_62868654",
       "range": {
         "startLine": 63,
         "startChar": 15,
