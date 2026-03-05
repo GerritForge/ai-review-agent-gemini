@@ -16,6 +16,24 @@
       "message": "Can you also point to its configuration URL to inform that the library needs to be configured in `gerrit.config`?",
       "revId": "b71fad9c362c1b3824560f940d2fefdc7064dd18",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc605583_d7eff39c",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T13:31:03Z",
+      "side": 1,
+      "message": "I am already doing it at line 53.",
+      "parentUuid": "55805138_7057a256",
+      "revId": "b71fad9c362c1b3824560f940d2fefdc7064dd18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
