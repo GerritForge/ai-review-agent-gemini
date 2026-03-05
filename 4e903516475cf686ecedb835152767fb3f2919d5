@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e9033f2_f0cc2f25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T13:28:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "837c8d1e_a0bcfe3a",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 10,
+        "endChar": 68
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "60373e70_4278f820",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-03-04T22:49:43Z",
       "side": 1,
       "message": "This looks fragile, as it assumes that the data type indicates the success or failure.\n\nJust return from the backend a proper JSON, which may also include the `error` field in case of errors.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 5
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34dc39ab_d2c72682",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T13:28:31Z",
+      "side": 1,
+      "message": "The TS library returns an exception if the server doesn\u0027t return a `2XX`, hence it will be handled in the `catch`.\n\nTo play safe, I have tightened checks on `2XX` responses with an unexpected payload. I cannot think of any case, but I am playing defense.",
+      "parentUuid": "60373e70_4278f820",
       "range": {
         "startLine": 44,
         "startChar": 0,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3cc9914e_71c310ec",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T13:28:31Z",
+      "side": 1,
+      "message": "This could be the case where the token is not set for the user.\nAn error like this will be displayed:\n\n```\nCannot retrieve Gemini API key. Error 404 (Not Found): Gemini token not set\n```\n\nI think it is useful information for the end user.\n\nIn case the token is set but not valid is handled later and an error like this is reported:\n\n```\nGemini error 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"generativelanguage.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n```",
+      "parentUuid": "ea5285ca_dd796024",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 6
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "19fcc8ed_7806a809",
         "filename": "web/index.ts",
         "patchSetId": 13
@@ -83,6 +155,30 @@
       "writtenOn": "2026-03-04T22:49:43Z",
       "side": 1,
       "message": "The best approach would be to _proxy_ this call through the backend and add the `apiKey` using the user\u0027s authenticated context.\n\nIt can be addressed as a follow-up change.",
+      "range": {
+        "startLine": 252,
+        "startChar": 19,
+        "endLine": 252,
+        "endChar": 76
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b56902ae_dbb11e3a",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-05T13:28:31Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "19fcc8ed_7806a809",
       "range": {
         "startLine": 252,
         "startChar": 19,
