@@ -95,6 +95,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d55f31a_d7afab44",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-06T22:33:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "34dc39ab_d2c72682",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 5
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea5285ca_dd796024",
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "This could be the case where the token is not set for the user.\nAn error like this will be displayed:\n\n```\nCannot retrieve Gemini API key. Error 404 (Not Found): Gemini token not set\n```\n\nI think it is useful information for the end user.\n\nIn case the token is set but not valid is handled later and an error like this is reported:\n\n```\nGemini error 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"generativelanguage.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n```",
       "parentUuid": "ea5285ca_dd796024",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 6
+      },
+      "revId": "4e903516475cf686ecedb835152767fb3f2919d5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2817e1d4_2d84dfd1",
+        "filename": "web/index.ts",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-06T22:33:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3cc9914e_71c310ec",
       "range": {
         "startLine": 50,
         "startChar": 0,
