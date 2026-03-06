@@ -22,6 +22,30 @@
       },
       "revId": "163febd75f9f60f4491cf60dda21314103493e36",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3656152d_ec5b6996",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-06T21:37:00Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "45ac9193_37b4530d",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "163febd75f9f60f4491cf60dda21314103493e36",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
