@@ -1,0 +1,1 @@
+pluginPipeline(extraPlugins: ['secure-store'])
