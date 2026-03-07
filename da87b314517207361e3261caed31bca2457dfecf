@@ -95,6 +95,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69371a3e_ac847f0d",
+        "filename": "web/index.ts",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-07T00:01:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a57b7436_734b30e7",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 5
+      },
+      "revId": "da87b314517207361e3261caed31bca2457dfecf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed042eca_52875e9d",
