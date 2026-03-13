@@ -11,9 +11,6 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
-import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
-
 import com.google.gerrit.entities.Account;
 import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.extensions.restapi.BadRequestException;
@@ -23,8 +20,6 @@ import com.google.gerrit.extensions.restapi.RestReadView;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.account.AccountResource;
-import com.google.gerrit.server.account.externalids.ExternalId;
-import com.google.gerrit.server.account.externalids.ExternalIds;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
@@ -34,7 +29,7 @@ import com.googlesource.gerrit.plugins.secureconfig.Codec;
 public class GetToken implements RestReadView<AccountResource> {
 
   private final Provider<CurrentUser> currentUser;
-  private final ExternalIds externalIds;
+  private final VersionedGeminiToken.Accessor geminiTokenAccessor;
   private final Codec codec;
 
   public static class Output {
@@ -42,9 +37,12 @@ public class GetToken implements RestReadView<AccountResource> {
   }
 
   @Inject
-  GetToken(Provider<CurrentUser> currentUser, ExternalIds externalIds, Codec codec) {
+  GetToken(
+      Provider<CurrentUser> currentUser,
+      VersionedGeminiToken.Accessor geminiTokenAccessor,
+      Codec codec) {
     this.currentUser = currentUser;
-    this.externalIds = externalIds;
+    this.geminiTokenAccessor = geminiTokenAccessor;
     this.codec = codec;
   }
 
@@ -59,15 +57,11 @@ public class GetToken implements RestReadView<AccountResource> {
       throw new AuthException("Cannot read another user's token");
     }
 
-    for (ExternalId e : externalIds.byAccount(accountId)) {
-      if (SCHEME_EXTERNAL.equals(e.key().scheme())
-          && e.key().id().startsWith(getTokenPrefix(accountId))) {
-
-        String storedId = e.key().id();
-        Output out = new Output();
-        out.token = codec.decode(storedId.substring(getTokenPrefix(accountId).length()));
-        return Response.ok(out);
-      }
+    var storedToken = geminiTokenAccessor.getToken(accountId);
+    if (storedToken.isPresent()) {
+      Output out = new Output();
+      out.token = codec.decode(storedToken.get());
+      return Response.ok(out);
     }
 
     throw new ResourceNotFoundException("Gemini token not set");
