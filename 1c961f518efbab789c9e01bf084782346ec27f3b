@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0f92f85_48bae9f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-13T12:14:50Z",
+      "side": 1,
+      "message": "I didn\u0027t consider any cleanup of possible token left in the external ID section. Should we consider adding a cleanup script?",
+      "revId": "1c961f518efbab789c9e01bf084782346ec27f3b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
