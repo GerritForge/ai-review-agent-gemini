@@ -11,23 +11,18 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.API_TOKEN_ENDPOINT;
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
+import static com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule.API_TOKEN_ENDPOINT;
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
 import com.google.gerrit.acceptance.TestPlugin;
 import com.google.gerrit.entities.Account;
 import com.google.gerrit.extensions.annotations.PluginName;
-import com.google.gerrit.server.account.externalids.ExternalId;
-import com.google.gerrit.server.account.externalids.ExternalIds;
 import com.google.inject.Inject;
 import com.google.inject.Key;
 import com.googlesource.gerrit.plugins.secureconfig.Codec;
 import java.io.IOException;
-import java.util.Optional;
+import org.eclipse.jgit.errors.ConfigInvalidException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,7 +32,7 @@ import org.junit.Test;
     httpModule = "com.gerritforge.gerrit.plugins.ai.gemini.HttpModule")
 public class AddTokenIT extends LightweightPluginDaemonTest {
 
-  @Inject private ExternalIds externalIds;
+  @Inject private VersionedGeminiToken.Accessor geminiTokenAccessor;
   String pluginName;
   private Codec codec;
 
@@ -60,18 +55,29 @@ public class AddTokenIT extends LightweightPluginDaemonTest {
     assertTokenCorrectlySet(accountId, token);
   }
 
-  private void assertTokenCorrectlySet(Account.Id accountId, String token) throws IOException {
-    ImmutableSet<ExternalId> extIds = externalIds.byAccount(accountId);
-    Optional<ExternalId> optExtId =
-        extIds.stream()
-            .filter(e -> SCHEME_EXTERNAL.equals(e.key().scheme()))
-            .filter(e -> e.key().id().startsWith(getTokenPrefix(accountId)))
-            .findFirst();
+  @Test
+  public void shouldUpdateTokenForSelf() throws Exception {
+    String token = "my-initial-secret-gemini-token";
+    AddToken.Input input = new AddToken.Input();
+    input.token = token;
 
-    assertThat(optExtId.isPresent()).isTrue();
-    String storedId = optExtId.get().key().id();
-    String encodedPart = storedId.substring(getTokenPrefix(accountId).length());
-    assertThat(codec.decode(encodedPart)).isEqualTo(token);
+    userRestSession.put(getAddTokenUri("self"), input).assertCreated();
+
+    Account.Id accountId = user.id();
+
+    assertTokenCorrectlySet(accountId, token);
+
+    String updatedToken = "my-updated-secret-gemini-token";
+    input.token = updatedToken;
+
+    userRestSession.put(getAddTokenUri("self"), input).assertCreated();
+
+    assertTokenCorrectlySet(accountId, updatedToken);
+  }
+
+  private void assertTokenCorrectlySet(Account.Id accountId, String token)
+      throws IOException, ConfigInvalidException {
+    assertThat(geminiTokenAccessor.getToken(accountId)).hasValue(codec.encode(token));
   }
 
   @Test
