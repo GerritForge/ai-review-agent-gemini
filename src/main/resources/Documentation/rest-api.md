@@ -4,7 +4,8 @@ Rest API
 ## User Gemini API Key Endpoints
 
 This plugin exposes REST endpoints to allow users to manage their personal
-Gemini API key. The API key is stored per-user.
+Gemini API key. The API key is stored on a per-user basis in the account
+preferences file `ai-user-data.config`.
 
 All endpoints require authentication.
 
