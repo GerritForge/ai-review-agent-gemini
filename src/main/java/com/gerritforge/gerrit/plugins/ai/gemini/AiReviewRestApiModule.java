@@ -11,14 +11,13 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.API_TOKEN_ENDPOINT;
-
 import com.google.gerrit.extensions.restapi.RestApiModule;
 import com.google.gerrit.server.account.AccountResource;
 import com.googlesource.gerrit.plugins.secureconfig.Codec;
 import com.googlesource.gerrit.plugins.secureconfig.PBECodec;
 
 public class AiReviewRestApiModule extends RestApiModule {
+  static final String API_TOKEN_ENDPOINT = "apiToken";
 
   @Override
   protected void configure() {

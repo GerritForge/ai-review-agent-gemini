@@ -11,7 +11,7 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.API_TOKEN_ENDPOINT;
+import static com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule.API_TOKEN_ENDPOINT;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
