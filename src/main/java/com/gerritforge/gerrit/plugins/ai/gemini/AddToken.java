@@ -11,11 +11,6 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.TokenUtils.getTokenPrefix;
-import static com.google.gerrit.server.account.externalids.ExternalId.SCHEME_EXTERNAL;
-
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableSet;
 import com.google.gerrit.entities.Account;
 import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.extensions.restapi.BadRequestException;
@@ -24,12 +19,7 @@ import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestModifyView;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.IdentifiedUser;
-import com.google.gerrit.server.UserInitiated;
 import com.google.gerrit.server.account.AccountResource;
-import com.google.gerrit.server.account.AccountsUpdate;
-import com.google.gerrit.server.account.externalids.ExternalId;
-import com.google.gerrit.server.account.externalids.ExternalIdFactory;
-import com.google.gerrit.server.account.externalids.ExternalIds;
 import com.google.gerrit.server.permissions.GlobalPermission;
 import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.inject.Inject;
@@ -38,9 +28,7 @@ import com.googlesource.gerrit.plugins.secureconfig.Codec;
 
 public class AddToken implements RestModifyView<AccountResource, AddToken.Input> {
   private final Provider<CurrentUser> currentUser;
-  private final Provider<AccountsUpdate> accountsUpdateProvider;
-  private final ExternalIds externalIds;
-  private final ExternalIdFactory extIdFactory;
+  private final VersionedAiUserData.Factory geminiTokenFactory;
   private final Codec codec;
   private final PermissionBackend permissionBackend;
 
@@ -51,15 +39,11 @@ public class AddToken implements RestModifyView<AccountResource, AddToken.Input>
   @Inject
   protected AddToken(
       Provider<CurrentUser> currentUser,
-      @UserInitiated Provider<AccountsUpdate> accountsUpdateProvider,
-      ExternalIds externalIds,
-      ExternalIdFactory extIdFactory,
+      VersionedAiUserData.Factory geminiTokenFactory,
       Codec codec,
       PermissionBackend permissionBackend) {
     this.currentUser = currentUser;
-    this.accountsUpdateProvider = accountsUpdateProvider;
-    this.externalIds = externalIds;
-    this.extIdFactory = extIdFactory;
+    this.geminiTokenFactory = geminiTokenFactory;
     this.codec = codec;
     this.permissionBackend = permissionBackend;
   }
@@ -67,6 +51,9 @@ public class AddToken implements RestModifyView<AccountResource, AddToken.Input>
   @Override
   public Response<?> apply(AccountResource resource, AddToken.Input input)
       throws AuthException, BadRequestException, ResourceConflictException, Exception {
+    if (input.token == null || input.token.isBlank()) {
+      throw new BadRequestException("token must be present and non-empty");
+    }
 
     IdentifiedUser iu = resource.getUser();
     Account.Id accountId = iu.getAccountId();
@@ -75,39 +62,10 @@ public class AddToken implements RestModifyView<AccountResource, AddToken.Input>
       permissionBackend.currentUser().check(GlobalPermission.ADMINISTRATE_SERVER);
     }
 
-    if (Strings.isNullOrEmpty(input.token)) {
-      throw new BadRequestException("Missing 'token'");
-    }
-    String token = input.token;
-
-    // external-id key format: external:gemini:<accountId>:<token>
-    ExternalId extId =
-        extIdFactory.create(
-            SCHEME_EXTERNAL, getFormattedUserToken(token.trim(), accountId, codec), accountId);
-
-    ImmutableSet<ExternalId> existingExtIds = externalIds.byAccount(accountId);
-    accountsUpdateProvider
-        .get()
-        .update(
-            "Updated Gemini token for account " + accountId,
-            accountId,
-            u -> {
-              // Remove older Gemini token(s) for this account (if any)
-              for (ExternalId e : existingExtIds) {
-                if (SCHEME_EXTERNAL.equals(e.key().scheme())
-                    && e.key().id().startsWith(getTokenPrefix(accountId))) {
-                  // Delete the previous Gemini token for this account, regardless of its old value.
-                  u.deleteExternalId(e);
-                }
-              }
-
-              u.addExternalId(extId);
-            });
+    String encryptedToken = codec.encode(input.token.trim());
+    VersionedAiUserData geminiToken = geminiTokenFactory.create(accountId).load();
+    geminiToken.setToken(encryptedToken);
 
     return Response.created();
-  }
-
-  static String getFormattedUserToken(String token, Account.Id accountId, Codec codec) {
-    return getTokenPrefix(accountId) + codec.encode(token);
   }
 }
