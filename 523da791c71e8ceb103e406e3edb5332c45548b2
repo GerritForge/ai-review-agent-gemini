@@ -468,6 +468,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b309aa5_3b759c6d",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T10:50:43Z",
+      "side": 1,
+      "message": "The in memory representation if the `token` is populated by `onLoad()` and only when `getToken()` is called is it returned. Maybe I am misunderstanding your comment?",
+      "parentUuid": "8b4dd849_c5f2c0f5",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48a78c18_29a4571e",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
         "patchSetId": 7
