@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eea3bc8f_45d3ec97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Renamed `ai-user-data`",
+      "parentUuid": "a9fae45b_6c2a95fd",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c689719_2d73c293",
@@ -131,6 +155,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1dd81236_3d82fafa",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "I don\u0027t see it as an error. The user just tried to set the same token; hence, as an optimization, the write didn\u0027t happen. I initially had the logic inside the `setToken` method, but I wanted to expose that the write didn\u0027t happen.\n\nShall I put it back again?",
+      "parentUuid": "2b834ea1_b11ecf82",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 5
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "93569a8d_1554f8be",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
         "patchSetId": 7
@@ -202,6 +250,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ef4c3aaf_beb81d03",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "I like `VersionedAiUserData` more. I agree with Luca `VersionedUserData` is too generic, it might clash in futute with other functionality.",
+      "parentUuid": "03f92a14_a40ae5de",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "598e11ee_0c73fd73",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
         "patchSetId": 7
@@ -213,6 +285,30 @@
       "writtenOn": "2026-03-16T06:29:29Z",
       "side": 1,
       "message": "```suggestion\n  static final String FILE_NAME \u003d \"ai-user-data.config\";\n```",
+      "range": {
+        "startLine": 40,
+        "startChar": 35,
+        "endLine": 40,
+        "endChar": 48
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01628e24_1c11357c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "598e11ee_0c73fd73",
       "range": {
         "startLine": 40,
         "startChar": 35,
@@ -240,6 +336,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e719444d_1f04c197",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "586850af_03976276",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "174262ef_f7539c46",
@@ -253,6 +367,30 @@
       "writtenOn": "2026-03-16T06:29:29Z",
       "side": 1,
       "message": "This is how you store the value, not what the value represents. `encrypted` just means that the data is encrypted, but it doesn\u0027t tell you what it is the data.\n\n\n\n```suggestion\n  private static final String TOKEN_KEY \u003d \"apiKey\";\n```",
+      "range": {
+        "startLine": 42,
+        "startChar": 43,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca0ec094_2ba390a0",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "174262ef_f7539c46",
       "range": {
         "startLine": 42,
         "startChar": 43,
@@ -305,6 +443,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "19f21804_c25c2728",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Which one are you referring to? If I look for example at this one [1] it is done un the `VersionMetaData` implementation.\n\n[1]: https://cs.opensource.google/gerrit/gerrit/gerrit/+/master:java/com/google/gerrit/server/account/VersionedAuthorizedKeys.java;l\u003d134",
+      "parentUuid": "48a78c18_29a4571e",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 3
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c23c32a_ece0675d",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
         "patchSetId": 7
@@ -316,6 +478,24 @@
       "writtenOn": "2026-03-16T06:29:29Z",
       "side": 1,
       "message": "```suggestion\n    token \u003d Optional.ofNullable(Strings.emptyToNull(cfg.getString(SECTION, SUBSECTION, TOKEN_KEY)));\n```",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df0e0f40_7c70e442",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c23c32a_ece0675d",
       "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -360,6 +540,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0acf2b6_e629b109",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6e4528b_eeace9b0",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "808f6d1c_4b886215",
@@ -373,6 +571,30 @@
       "writtenOn": "2026-03-16T06:29:29Z",
       "side": 1,
       "message": "```suggestion\nGemini API key. The API key is stored on a per-user basis in the account preferences file `gemini.config`.\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 8,
+        "endChar": 28
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f26be8f_cd4c1517",
+        "filename": "src/main/resources/Documentation/rest-api.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T08:56:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "808f6d1c_4b886215",
       "range": {
         "startLine": 7,
         "startChar": 16,
