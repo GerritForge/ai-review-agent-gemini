@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a14c7c74_f390c2ea",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef04c6a0_65633357",
+      "range": {
+        "startLine": 55,
+        "startChar": 8,
+        "endLine": 55,
+        "endChar": 24
+      },
+      "revId": "c810bc102dc706e01074a383cc1ce06ddeb5a7f6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fa4e4dc_83649293",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae958aa7_3ed6deed",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedAiUserData.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fa4e4dc_83649293",
+      "range": {
+        "startLine": 114,
+        "startChar": 9,
+        "endLine": 114,
+        "endChar": 16
+      },
+      "revId": "c810bc102dc706e01074a383cc1ce06ddeb5a7f6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "209b71bd_a6d58396",
@@ -60,6 +108,30 @@
       "writtenOn": "2026-03-16T15:01:41Z",
       "side": 1,
       "message": "This looks an early optimisation: maybe we don\u0027t need it.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 5
+      },
+      "revId": "c810bc102dc706e01074a383cc1ce06ddeb5a7f6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869285a6_87c3d82d",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedAiUserData.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "209b71bd_a6d58396",
       "range": {
         "startLine": 118,
         "startChar": 0,

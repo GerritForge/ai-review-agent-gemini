@@ -83,6 +83,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0813749a_133202da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5f9793e9_30909d56",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b219feab_2a014746",
@@ -215,6 +233,30 @@
       "side": 1,
       "message": "I don\u0027t see it as an error. The user just tried to set the same token; hence, as an optimization, the write didn\u0027t happen. I initially had the logic inside the `setToken` method, but I wanted to expose that the write didn\u0027t happen.\n\nShall I put it back again?",
       "parentUuid": "2b834ea1_b11ecf82",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 5
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "008799cc_0aa28199",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1dd81236_3d82fafa",
       "range": {
         "startLine": 68,
         "startChar": 0,
@@ -508,6 +550,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a67ca8e_d2085d7e",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b309aa5_3b759c6d",
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48a78c18_29a4571e",
@@ -545,6 +605,30 @@
       "side": 1,
       "message": "Which one are you referring to? If I look for example at this one [1] it is done un the `VersionMetaData` implementation.\n\n[1]: https://cs.opensource.google/gerrit/gerrit/gerrit/+/master:java/com/google/gerrit/server/account/VersionedAuthorizedKeys.java;l\u003d134",
       "parentUuid": "48a78c18_29a4571e",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 3
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b86afc1_be266ded",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19f21804_c25c2728",
       "range": {
         "startLine": 80,
         "startChar": 0,
@@ -627,6 +711,30 @@
       "side": 1,
       "message": "I amended the token to make it mandatory, not null. I suggest implementing the deletion logic in a follow-up change.",
       "parentUuid": "9773d025_d2144fab",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 5
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5206caa_7ca13f1a",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T17:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a161bedb_244d7544",
       "range": {
         "startLine": 99,
         "startChar": 0,
