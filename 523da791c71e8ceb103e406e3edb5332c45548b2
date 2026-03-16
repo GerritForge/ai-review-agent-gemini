@@ -132,6 +132,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb030c70_9575b244",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T10:46:31Z",
+      "side": 1,
+      "message": "I have changed my mind. I think the `VersionedMetaData` class should only take care of the versioning. Encoding/decoding should happen separately. We could capture it in a separate class, but I think it would be overkill. Maybe we can keep it in the REST API layer for now and if it gets more complicated, abstract it in a dedicated class.",
+      "parentUuid": "32ca4aa4_cf15446e",
+      "range": {
+        "startLine": 66,
+        "startChar": 28,
+        "endLine": 66,
+        "endChar": 33
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b834ea1_b11ecf82",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
         "patchSetId": 7
@@ -537,6 +561,30 @@
       "writtenOn": "2026-03-16T06:29:29Z",
       "side": 1,
       "message": "`checkLoaded()` checks that token is set, but then the following `if()` checks if token is empty. What\u0027s the intended behaviour? Do we want to allow removing tokens (token empty) or not?",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 5
+      },
+      "revId": "523da791c71e8ceb103e406e3edb5332c45548b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a161bedb_244d7544",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/VersionedGeminiToken.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-16T10:46:31Z",
+      "side": 1,
+      "message": "I amended the token to make it mandatory, not null. I suggest implementing the deletion logic in a follow-up change.",
+      "parentUuid": "9773d025_d2144fab",
       "range": {
         "startLine": 99,
         "startChar": 0,
