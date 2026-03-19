@@ -16,6 +16,24 @@
       "message": "[Gemini] Issue: The GetToken endpoint decrypts the stored API token and returns it in plain text (GetToken.Output.token). This is a significant security vulnerability. \n\nI guess this can be addressed as a follow-up.",
       "revId": "28e74a032556a2345454af66b5b3b382e2439a4a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41d283a8_53e51676",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-19T14:16:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0221efb1_0c8d1d3e",
+      "revId": "28e74a032556a2345454af66b5b3b382e2439a4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
