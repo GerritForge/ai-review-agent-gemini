@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "934fed3b_f07c2954",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AddToken.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-19T14:54:53Z",
+      "side": 1,
+      "message": "Leftover? It is checked already at L55",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 5
+      },
+      "revId": "28e74a032556a2345454af66b5b3b382e2439a4a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0221efb1_0c8d1d3e",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GetToken.java",
         "patchSetId": 11
