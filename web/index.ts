@@ -16,6 +16,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import '@gerritcodereview/typescript-api/gerrit';
 import type {PluginApi} from '@gerritcodereview/typescript-api/plugin';
+import {HttpMethod} from '@gerritcodereview/typescript-api/rest';
 import type {
   AiCodeReviewProvider,
   Actions,
@@ -38,6 +39,7 @@ type TokenFetchResult =
   | { error: string };
 
 type TokenResponse = {token: string};
+const JSON_PREFIX = ")]}'";
 
 function isTokenResponse(r: unknown): r is TokenResponse {
   return (
@@ -47,17 +49,46 @@ function isTokenResponse(r: unknown): r is TokenResponse {
     typeof (r as any).token === 'string'
   );
 }
+
+async function readPrefixedJsonResponse(res: Response): Promise<unknown> {
+  const text = await res.text();
+  return JSON.parse(text.startsWith(JSON_PREFIX) ? text.slice(JSON_PREFIX.length) : text);
+}
+
+function getSettingsUrl(): string {
+  const canonicalPath =
+    (window as Window & {CANONICAL_PATH?: string}).CANONICAL_PATH ?? '';
+  const base = `${window.location.origin}${canonicalPath}`.replace(/\/$/, '');
+  return `${base}/settings/`;
+}
+
 async function fetchApiKeyFromBackend(
   plugin: PluginApi
 ): Promise<TokenFetchResult> {
   try {
-    const res = await plugin.restApi().get(TOKEN_ENDPOINT);
+     const res = await plugin.restApi().fetch(
+       HttpMethod.GET,
+       TOKEN_ENDPOINT,
+       undefined,
+       response => {
+         if (response?.status === 404) return;
+         if (response) throw new Error(`Error ${response.status}: ${response.statusText}`);
+       }
+     );
 
-    if (!isTokenResponse(res)) {
+    if (!res || res.status === 404) {
+      return {
+        error: `Missing Gemini API key. Make sure to set it at ${getSettingsUrl()}.`,
+      };
+    }
+
+    const json = await readPrefixedJsonResponse(res);
+
+    if (!isTokenResponse(json)) {
       return {error: 'Unexpected response from token endpoint'};
     }
 
-    return {token: res.token.trim()};
+    return {token: json.token.trim()};
   } catch (e) {
     return {
       error: `Cannot retrieve Gemini API key. ${e}`,
