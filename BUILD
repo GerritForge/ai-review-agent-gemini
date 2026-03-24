@@ -1,17 +1,17 @@
+load("//tools/bzl:junit.bzl", "junit_tests")
+load(
+    "//tools/bzl:plugin.bzl",
+    "PLUGIN_DEPS",
+    "PLUGIN_TEST_DEPS",
+    "gerrit_plugin",
+)
+
 package_group(
     name = "visibility",
     packages = ["//plugins/ai-review-agent-gemini/..."],
 )
 
 package(default_visibility = [":visibility"])
-
-load(
-    "//tools/bzl:plugin.bzl",
-    "gerrit_plugin",
-    "PLUGIN_DEPS",
-    "PLUGIN_TEST_DEPS",
-)
-load("//tools/bzl:junit.bzl", "junit_tests")
 
 gerrit_plugin(
     name = "ai-review-agent-gemini",
@@ -25,8 +25,7 @@ gerrit_plugin(
     resource_strip_prefix = "plugins/ai-review-agent-gemini/resources",
     resources = glob(["resources/**/*"]),
     deps = [
-        "//lib/errorprone:annotations",
-        ":secure-config-neverlink",
+        ":ai-review-agent-provider-neverlink",
     ],
 )
 
@@ -36,14 +35,14 @@ junit_tests(
     tags = ["ai-review-agent-gemini"],
     visibility = ["//visibility:public"],
     deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
-        "//plugins/secure-config:secure-config",
         ":ai-review-agent-gemini__plugin",
-        ":secure-config-neverlink",
+        "//plugins/ai-review-agent-provider:ai-review-agent-provider__plugin",
+        "//plugins/secure-config",
     ],
 )
 
 java_library(
-    name = "secure-config-neverlink",
+    name = "ai-review-agent-provider-neverlink",
     neverlink = True,
-    exports = ["//plugins/secure-config:secure-config"],
+    exports = ["//plugins/ai-review-agent-provider:ai-review-agent-provider__plugin"],
 )
