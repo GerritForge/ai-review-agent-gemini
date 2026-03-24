@@ -11,9 +11,10 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule.API_TOKEN_ENDPOINT;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.gerritforge.gerrit.plugins.ai.provider.AddToken;
+import com.gerritforge.gerrit.plugins.ai.provider.GetToken;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
 import com.google.gerrit.acceptance.RestResponse;
 import com.google.gerrit.acceptance.TestPlugin;
@@ -68,6 +69,6 @@ public class GetTokenIT extends LightweightPluginDaemonTest {
   }
 
   private String getTokenUri(String account) {
-    return String.join("/", "/accounts", account, pluginName) + "~" + API_TOKEN_ENDPOINT;
+    return String.join("/", "/accounts", account, pluginName) + "~apiToken";
   }
 }

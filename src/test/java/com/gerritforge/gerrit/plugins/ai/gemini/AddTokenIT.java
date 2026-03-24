@@ -11,9 +11,11 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import static com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule.API_TOKEN_ENDPOINT;
+import static com.gerritforge.gerrit.plugins.ai.gemini.AiReviewRestApiModule.PROVIDER_KEY;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.gerritforge.gerrit.plugins.ai.provider.AddToken;
+import com.gerritforge.gerrit.plugins.ai.provider.VersionedAiUserData;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
 import com.google.gerrit.acceptance.TestPlugin;
 import com.google.gerrit.entities.Account;
@@ -76,7 +78,7 @@ public class AddTokenIT extends LightweightPluginDaemonTest {
 
   private void assertTokenCorrectlySet(Account.Id accountId, String token)
       throws IOException, ConfigInvalidException {
-    assertThat(geminiTokenFactory.create(accountId).load().getToken())
+    assertThat(geminiTokenFactory.create(accountId).load().getToken(PROVIDER_KEY))
         .hasValue(codec.encode(token));
   }
 
@@ -118,6 +120,6 @@ public class AddTokenIT extends LightweightPluginDaemonTest {
   }
 
   private String getAddTokenUri(String account) {
-    return String.join("/", "/accounts", account, pluginName) + "~" + API_TOKEN_ENDPOINT;
+    return String.join("/", "/accounts", account, pluginName) + "~apiToken";
   }
 }
