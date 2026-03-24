@@ -11,21 +11,14 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
-import com.google.gerrit.extensions.restapi.RestApiModule;
-import com.google.gerrit.server.account.AccountResource;
-import com.google.inject.assistedinject.FactoryModuleBuilder;
-import com.googlesource.gerrit.plugins.secureconfig.Codec;
-import com.googlesource.gerrit.plugins.secureconfig.PBECodec;
+import com.gerritforge.gerrit.plugins.ai.provider.AiReviewProviderModule;
+import com.google.inject.AbstractModule;
 
-public class AiReviewRestApiModule extends RestApiModule {
-  static final String API_TOKEN_ENDPOINT = "apiToken";
+public class AiReviewRestApiModule extends AbstractModule {
+  static final String PROVIDER_KEY = "gemini";
 
   @Override
   protected void configure() {
-    put(AccountResource.ACCOUNT_KIND, API_TOKEN_ENDPOINT).to(AddToken.class);
-    get(AccountResource.ACCOUNT_KIND, API_TOKEN_ENDPOINT).to(GetToken.class);
-
-    install(new FactoryModuleBuilder().build(VersionedAiUserData.Factory.class));
-    bind(Codec.class).to(PBECodec.class);
+    install(new AiReviewProviderModule(PROVIDER_KEY));
   }
 }

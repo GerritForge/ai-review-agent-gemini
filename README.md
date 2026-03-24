@@ -27,10 +27,12 @@ Gerrit v3.14 source code and Bazelisk 7.6.1 or later.
 ```bash
 git clone --recurse-submodules https://gerrit.googlesource.com/gerrit
 git clone https://gerrit.googlesource.com/plugins/secure-config
+git clone https://github.com/GerritForge/ai-review-agent-provider
 git clone https://github.com/GerritForge/ai-review-agent-gemini
 
 cd gerrit/plugins
 ln -s ../../secure-config .
+ln -s ../../ai-review-agent-provider .
 ln -s ../../ai-review-agent-gemini .
 ln -s ai-review-agent-gemini/external_package.json package.json
 
@@ -51,13 +53,15 @@ cp ai-review-agent-gemini.jar "$GERRIT_SITE/plugins/"
 ```
 
 The AI Review Agent Gemini plugin relies on the
-[secure-config](https://gerrit.googlesource.com/plugins/secure-config/) for securing the
-Gemini API token into the user's external IDs.
+[ai-review-agent-provider](https://github.com/GerritForge/ai-review-agent-provider)
+library for personal API token management, which in turn uses
+[secure-config](https://gerrit.googlesource.com/plugins/secure-config/) for encryption.
 
-The `secure-config.jar` needs to be installed into the (`$GERRIT_SITE`) lib' directory and
-the master encryption parameters are configured
+Both `ai-review-agent-provider.jar` and `secure-config.jar` need to be installed into
+the (`$GERRIT_SITE`) lib' directory and the master encryption parameters are configured
 [according to the secure-config configuration docs](https://gerrit.googlesource.com/plugins/secure-config/#customising-encryption-settings).
 
 ```bash
+cp ai-review-agent-provider.jar "$GERRIT_SITE/lib/"
 cp secure-config.jar "$GERRIT_SITE/lib/"
 ```
