@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "114a6e21_7270e7f6",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-25T08:35:00Z",
+      "side": 1,
+      "message": "This looks like a complicated way to get the canonical web URL.\n\nIs there an easier way?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 29
+      },
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49ce3d73_525428cb",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-25T08:35:00Z",
+      "side": 1,
+      "message": "Missing curly brackets.\n\n\n\n```suggestion\n         if (response?.status \u003d\u003d\u003d 404) {\n           return;\n         }\n```",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de3628a1_a577e833",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-25T08:35:00Z",
+      "side": 1,
+      "message": "Missing curly brackets.\n\n\n\n```suggestion\n         if (response) {\n           throw new Error(`Error ${response.status}: ${response.statusText}`);\n         }\n```",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebae65f5_a0201384",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-25T08:35:00Z",
+      "side": 1,
+      "message": "Is this correct? If the backend isn\u0027t responding I believe we should return an error.",
+      "range": {
+        "startLine": 79,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0742624_b3e456ee",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-25T08:35:00Z",
+      "side": 1,
+      "message": "Use a more imperative form so that people are guided to the next steps.\n\n```suggestion\n        error: `AI review is disabled because the Gemini API key. Define your API key at ${getSettingsUrl()} and try again.`,\n```",
+      "range": {
+        "startLine": 81,
+        "startChar": 16,
+        "endLine": 81,
+        "endChar": 83
+      },
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
