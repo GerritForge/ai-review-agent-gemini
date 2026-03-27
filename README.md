@@ -26,16 +26,16 @@ Gerrit v3.14 source code and Bazelisk 7.6.1 or later.
 
 ```bash
 git clone --recurse-submodules https://gerrit.googlesource.com/gerrit
-git clone https://gerrit.googlesource.com/plugins/secure-config
+git clone https://github.com/GerritForge/ai-review-agent-provider
 git clone https://github.com/GerritForge/ai-review-agent-gemini
 
 cd gerrit/plugins
-ln -s ../../secure-config .
+ln -s ../../ai-review-agent-provider .
 ln -s ../../ai-review-agent-gemini .
 ln -s ai-review-agent-gemini/external_package.json package.json
 
 cd ..
-bazelisk build plugins/ai-review-agent-gemini
+bazelisk build plugins/ai-review-agent-gemini plugins/ai-review-agent-provider
 ```
 
 The build output is:
@@ -44,13 +44,14 @@ The build output is:
 
 ### [Install in Gerrit](#install-in-gerrit)
 
-Copy the built plugin into your Gerrit site (`$GERRIT_SITE`) plugins' directory:
+Copy the built plugin and the `ai-review-agent-provider`  into your Gerrit site (`$GERRIT_SITE`)
+plugins' directory.
 
 ```bash
-cp ai-review-agent-gemini.jar "$GERRIT_SITE/plugins/"
+cp ai-review-agent-*.jar "$GERRIT_SITE/plugins/"
 ```
 
-The AI Review Agent Gemini plugin relies on the
+The AI Review Agent Provider plugin relies on the
 [secure-config](https://gerrit.googlesource.com/plugins/secure-config/) for securing the
 Gemini API token into the user's external IDs.
 
