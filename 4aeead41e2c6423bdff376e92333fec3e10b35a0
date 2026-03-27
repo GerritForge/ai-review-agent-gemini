@@ -85,6 +85,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76e12624_9dd9f72a",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-27T08:51:56Z",
+      "side": 1,
+      "message": "Sure, also in Java, but we add them in the Gerrit project for improved readability.",
+      "parentUuid": "b7e10db8_59606b78",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "de3628a1_a577e833",
         "filename": "web/index.ts",
         "patchSetId": 4
@@ -114,6 +132,24 @@
       "side": 1,
       "message": "Same as before",
       "parentUuid": "de3628a1_a577e833",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c19306cc_d487d7fa",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-27T08:51:56Z",
+      "side": 1,
+      "message": "Sure, also in Java, but we add them in the Gerrit project for improved readability.",
+      "parentUuid": "5b6140b3_abddd1af",
       "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -155,6 +191,30 @@
       "side": 1,
       "message": "If the backend is not responding, the error will be caught later by:\n\n```\n} catch (e) {\n    return {\n      error: `Cannot retrieve Gemini API key. ${e}`,\n    };\n  }\n```\n\nThe check for `!res` is needed, otherwise the compiler will complain about `status` not existing on type `void | Response`.",
       "parentUuid": "ebae65f5_a0201384",
+      "range": {
+        "startLine": 79,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5068e281_d3bd10d6",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-27T08:51:56Z",
+      "side": 1,
+      "message": "\u003e If the backend is not responding, the error will be caught later by:\n\u003e \n\u003e ```\n\u003e } catch (e) {\n\u003e     return {\n\u003e       error: `Cannot retrieve Gemini API key. ${e}`,\n\u003e     };\n\u003e   }\n\u003e ```\n\nWell, that seems more of a _last resort_ catch-all clause.\nWhat is the condition where `res` is not returned? Can we give a meaninful error in that case?\n\n\u003e \n\u003e The check for `!res` is needed, otherwise the compiler will complain about `status` not existing on type `void | Response`.",
+      "parentUuid": "cd5ca833_baff153d",
       "range": {
         "startLine": 79,
         "startChar": 8,
