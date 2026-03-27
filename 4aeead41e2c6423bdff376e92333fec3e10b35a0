@@ -101,6 +101,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8b7ecd8_0b38ddba",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-27T10:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76e12624_9dd9f72a",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de3628a1_a577e833",
@@ -150,6 +168,24 @@
       "side": 1,
       "message": "Sure, also in Java, but we add them in the Gerrit project for improved readability.",
       "parentUuid": "5b6140b3_abddd1af",
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebfa8579_21eb7894",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-27T10:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c19306cc_d487d7fa",
       "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -215,6 +251,30 @@
       "side": 1,
       "message": "\u003e If the backend is not responding, the error will be caught later by:\n\u003e \n\u003e ```\n\u003e } catch (e) {\n\u003e     return {\n\u003e       error: `Cannot retrieve Gemini API key. ${e}`,\n\u003e     };\n\u003e   }\n\u003e ```\n\nWell, that seems more of a _last resort_ catch-all clause.\nWhat is the condition where `res` is not returned? Can we give a meaninful error in that case?\n\n\u003e \n\u003e The check for `!res` is needed, otherwise the compiler will complain about `status` not existing on type `void | Response`.",
       "parentUuid": "cd5ca833_baff153d",
+      "range": {
+        "startLine": 79,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "4aeead41e2c6423bdff376e92333fec3e10b35a0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dfe107d_5101062e",
+        "filename": "web/index.ts",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2026-03-27T10:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5068e281_d3bd10d6",
       "range": {
         "startLine": 79,
         "startChar": 8,
