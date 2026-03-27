@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fae0b95_03a193f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-27T14:28:06Z",
+      "side": 1,
+      "message": "Superseded by https://review.gerrithub.io/c/GerritForge/ai-review-agent-gemini/+/1234380",
+      "revId": "25322c2c81550cd2bc9229ff37c3762152c46957",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
