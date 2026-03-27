@@ -32,7 +32,7 @@ import {
 } from './prompts';
 
 const DEFAULT_MODEL = 'gemini-2.5-flash';
-const TOKEN_ENDPOINT = '/accounts/self/ai-review-agent-gemini~apiToken';
+const TOKEN_ENDPOINT = '/accounts/self/ai-review-agent-provider~apiToken';
 
 type TokenFetchResult =
   | { token: string }
