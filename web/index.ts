@@ -1,3 +1,5 @@
+<<<<<<< PATCH SET (887f8f45aae5183417b0df4b7527ff7ccede62d2 Move the Gerrit ai-review-agent UI out of the plugin)
+=======
 /**
  * @license
  * Copyright (C) 2026 GerritForge, Inc.
@@ -468,3 +470,4 @@ function install(plugin: PluginApi) {
 }
 
 window.Gerrit.install(install);
+>>>>>>> BASE      (7b3110f94520bce23f6442acd5c5a696c09cf2a1 Use ai-review-agent-provider as pre-requisite)
