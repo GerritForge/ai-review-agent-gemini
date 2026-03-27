@@ -18,12 +18,9 @@ gerrit_plugin(
     srcs = glob(["src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/*.java"]),
     manifest_entries = [
         "Gerrit-PluginName: ai-review-agent-gemini",
-        "Gerrit-Module: com.gerritforge.gerrit.plugins.ai.gemini.AiReviewProviderModule",
-        "Gerrit-HttpModule: com.gerritforge.gerrit.plugins.ai.gemini.HttpModule",
+        "Gerrit-Module: com.gerritforge.gerrit.plugins.ai.gemini.GeminiReviewProviderModule",
     ],
-    resource_jars = ["//plugins/ai-review-agent-gemini/web:ai-review-agent-gemini"],
-    resource_strip_prefix = "plugins/ai-review-agent-gemini/resources",
-    resources = glob(["resources/**/*"]),
+    resources = glob(["src/main/resources/**/*"]),
     deps = [
         ":ai-review-agent-provider-neverlink",
         "//lib/errorprone:annotations",
@@ -37,7 +34,7 @@ junit_tests(
     visibility = ["//visibility:public"],
     deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
         ":ai-review-agent-gemini__plugin",
-        ":ai-review-agent-provider-neverlink",
+        "//plugins/ai-review-agent-provider",
     ],
 )
 
