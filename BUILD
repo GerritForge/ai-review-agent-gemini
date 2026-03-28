@@ -24,6 +24,18 @@ gerrit_plugin(
     deps = [
         ":ai-review-agent-provider-neverlink",
         "//lib/errorprone:annotations",
+        "@google-api-common//jar",
+        "@google-gemini//jar",
+        "@jackson-annotations//jar",
+        "@jackson-core//jar",
+        "@jackson-databind//jar",
+        "@jackson-datatype-jdk8//jar",
+        "@jackson-datatype-jsr310//jar",
+        "@kotlin-stdlib-jdk8//jar",
+        "@kotlin-stdlib//jar",
+        "@okhttp//jar",
+        "@okio-jvm//jar",
+        "@okio//jar",
     ],
 )
 
