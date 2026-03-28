@@ -19,14 +19,23 @@ gerrit_plugin(
     manifest_entries = [
         "Gerrit-PluginName: ai-review-agent-gemini",
         "Gerrit-Module: com.gerritforge.gerrit.plugins.ai.gemini.AiReviewProviderModule",
-        "Gerrit-HttpModule: com.gerritforge.gerrit.plugins.ai.gemini.HttpModule",
     ],
-    resource_jars = ["//plugins/ai-review-agent-gemini/web:ai-review-agent-gemini"],
-    resource_strip_prefix = "plugins/ai-review-agent-gemini/resources",
-    resources = glob(["resources/**/*"]),
+    resources = glob(["src/main/resources/**/*"]),
     deps = [
         ":ai-review-agent-provider-neverlink",
         "//lib/errorprone:annotations",
+        "@google-api-common//jar",
+        "@google-gemini//jar",
+        "@jackson-annotations//jar",
+        "@jackson-core//jar",
+        "@jackson-databind//jar",
+        "@jackson-datatype-jdk8//jar",
+        "@jackson-datatype-jsr310//jar",
+        "@kotlin-stdlib-jdk8//jar",
+        "@kotlin-stdlib//jar",
+        "@okhttp//jar",
+        "@okio-jvm//jar",
+        "@okio//jar",
     ],
 )
 
