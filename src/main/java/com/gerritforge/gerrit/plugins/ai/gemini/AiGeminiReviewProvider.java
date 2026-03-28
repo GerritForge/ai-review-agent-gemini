@@ -12,16 +12,22 @@
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
 import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProvider;
-import com.google.gerrit.extensions.registration.DynamicItem;
-import com.google.inject.AbstractModule;
-import com.google.inject.Scopes;
+import com.google.genai.Client;
+import com.google.genai.types.GenerateContentResponse;
 
-public class AiReviewProviderModule extends AbstractModule {
+public class AiGeminiReviewProvider implements AiReviewProvider {
+  private static final String GEMINI_PROVIDER = "gemini";
 
   @Override
-  protected void configure() {
-    DynamicItem.bind(binder(), AiReviewProvider.class)
-        .to(AiGeminiReviewProvider.class)
-        .in(Scopes.SINGLETON);
+  public String key() {
+    return GEMINI_PROVIDER;
+  }
+
+  @Override
+  public String review(String apiKey, String model, String prompt) {
+    try (Client client = Client.builder().apiKey(apiKey).build()) {
+      GenerateContentResponse response = client.models.generateContent(model, prompt, null);
+      return response.text();
+    }
   }
 }
