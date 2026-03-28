@@ -13,32 +13,17 @@ package com.gerritforge.gerrit.plugins.ai.gemini;
 
 import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProvider;
 import com.google.gerrit.extensions.registration.DynamicSet;
-import com.google.inject.AbstractModule;
+import com.google.gerrit.lifecycle.LifecycleModule;
+import com.google.inject.Scopes;
+import org.apache.http.impl.client.CloseableHttpClient;
 
-import java.util.Set;
-
-public class GeminiReviewProviderModule extends AbstractModule {
-
-  public static final AiReviewProvider INSTANCE = new AiReviewProvider() {
-
-    @Override
-    public String getDisplayName() {
-      return "Gemini";
-    }
-
-    @Override
-    public Set<String> getModels() {
-      return Set.of("gemini-2.5-flash", "gemini-2.5-pro");
-    }
-
-    @Override
-    public String review(String apiToken, String model, String prompt) {
-      return "**Gemini integration not implemented yet**";
-    }
-  };
+public class GeminiReviewProviderModule extends LifecycleModule {
 
   @Override
   protected void configure() {
-    DynamicSet.bind(binder(), AiReviewProvider.class).toInstance(INSTANCE);
+    bind(CloseableHttpClient.class).toProvider(HttpClientProvider.class).in(Scopes.SINGLETON);
+    listener().to(HttpClientProvider.class);
+
+    DynamicSet.bind(binder(), AiReviewProvider.class).to(AiGeminiReviewProvider.class);
   }
 }
