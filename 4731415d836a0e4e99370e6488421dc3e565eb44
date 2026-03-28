@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4aa5a59b_90c44c97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-03-28T13:53:46Z",
+      "side": 1,
+      "message": "The `Verified: -1` is expected because the dependent changes on the ai-review-agent-provider aren\u0027t merged yet.",
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
