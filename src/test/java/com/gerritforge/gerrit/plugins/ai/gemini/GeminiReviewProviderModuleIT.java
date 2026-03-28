@@ -11,6 +11,8 @@
 
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProvider;
 import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProviderApiModule;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
@@ -18,28 +20,34 @@ import com.google.gerrit.acceptance.TestPlugin;
 import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.inject.AbstractModule;
 import com.google.inject.Key;
+import java.util.Optional;
+import java.util.stream.StreamSupport;
 import org.junit.Test;
 
-import static com.google.common.truth.Truth.assertThat;
-
 @TestPlugin(
-	name = "ai-review-agent-provider",
-	sysModule = "com.gerritforge.gerrit.plugins.ai.gemini.GeminiReviewProviderModuleIT$TestModule")
+    name = "ai-review-agent-provider",
+    sysModule = "com.gerritforge.gerrit.plugins.ai.gemini.GeminiReviewProviderModuleIT$TestModule")
 public class GeminiReviewProviderModuleIT extends LightweightPluginDaemonTest {
 
-	public static class TestModule extends AbstractModule {
-		@Override
-		protected void configure() {
-			install(new AiReviewProviderApiModule());
-			install(new GeminiReviewProviderModule());
-		}
-	}
+  public static class TestModule extends AbstractModule {
+    @Override
+    protected void configure() {
+      install(new AiReviewProviderApiModule());
+      install(new GeminiReviewProviderModule());
+    }
+  }
 
-	@Test
-	public void shouldRegisterProviderInDynamicSet() {
-		DynamicSet<AiReviewProvider> aiReviewProviders = plugin.getSysInjector().getInstance(new Key<>() {
-		});
-		assertThat(aiReviewProviders).isNotNull();
-		assertThat(aiReviewProviders).contains(GeminiReviewProviderModule.INSTANCE);
-	}
+  @Test
+  public void shouldRegisterProviderInDynamicSet() {
+    DynamicSet<AiReviewProvider> aiReviewProviders =
+        plugin.getSysInjector().getInstance(new Key<>() {});
+    assertThat(aiReviewProviders).isNotNull();
+
+    Optional<AiReviewProvider> geminiProvider =
+        StreamSupport.stream(aiReviewProviders.spliterator(), false)
+            .filter(AiGeminiReviewProvider.class::isInstance)
+            .findFirst();
+    assertThat(geminiProvider).isPresent();
+    assertThat(geminiProvider.get().getDisplayName()).isEqualTo("Gemini");
+  }
 }

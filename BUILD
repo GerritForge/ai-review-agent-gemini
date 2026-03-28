@@ -1,17 +1,8 @@
-package_group(
-    name = "visibility",
-    packages = ["//plugins/ai-review-agent-gemini/..."],
-)
-
-package(default_visibility = [":visibility"])
-
 load(
-    "//tools/bzl:plugin.bzl",
-    "PLUGIN_DEPS",
-    "PLUGIN_TEST_DEPS",
+    "@com_googlesource_gerrit_bazlets//:gerrit_plugin.bzl",
     "gerrit_plugin",
+    "gerrit_plugin_tests",
 )
-load("//tools/bzl:junit.bzl", "junit_tests")
 
 gerrit_plugin(
     name = "ai-review-agent-gemini",
@@ -23,23 +14,22 @@ gerrit_plugin(
     resources = glob(["src/main/resources/**/*"]),
     deps = [
         ":ai-review-agent-provider-neverlink",
-        "//lib/errorprone:annotations",
     ],
 )
 
-junit_tests(
+gerrit_plugin_tests(
     name = "ai-review-agent-gemini_tests",
     srcs = glob(["src/test/java/**/*IT.java"]),
     tags = ["ai-review-agent-gemini"],
     visibility = ["//visibility:public"],
-    deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
+    deps = [
         ":ai-review-agent-gemini__plugin",
-        "//plugins/ai-review-agent-provider",
+        "//plugins/ai-review-agent-provider:ai-review-agent-provider-api",
     ],
 )
 
 java_library(
     name = "ai-review-agent-provider-neverlink",
     neverlink = True,
-    exports = ["//plugins/ai-review-agent-provider"],
+    exports = ["//plugins/ai-review-agent-provider:ai-review-agent-provider-api"],
 )
