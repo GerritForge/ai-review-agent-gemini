@@ -15,30 +15,10 @@ import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProvider;
 import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.inject.AbstractModule;
 
-import java.util.Set;
-
 public class GeminiReviewProviderModule extends AbstractModule {
-
-  public static final AiReviewProvider INSTANCE = new AiReviewProvider() {
-
-    @Override
-    public String getDisplayName() {
-      return "Gemini";
-    }
-
-    @Override
-    public Set<String> getModels() {
-      return Set.of("gemini-2.5-flash", "gemini-2.5-pro");
-    }
-
-    @Override
-    public String review(String apiToken, String model, String prompt) {
-      return "**Gemini integration not implemented yet**";
-    }
-  };
 
   @Override
   protected void configure() {
-    DynamicSet.bind(binder(), AiReviewProvider.class).toInstance(INSTANCE);
+    DynamicSet.bind(binder(), AiReviewProvider.class).to(AiGeminiReviewProvider.class);
   }
 }
