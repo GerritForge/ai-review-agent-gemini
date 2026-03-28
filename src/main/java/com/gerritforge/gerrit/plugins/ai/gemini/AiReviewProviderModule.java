@@ -1,3 +1,4 @@
+<<<<<<< PATCH SET (4731415d836a0e4e99370e6488421dc3e565eb44 Call Gemini API from the backend)
 // Copyright (C) 2026 GerritForge, Inc.
 //
 // Licensed under the BSL 1.1 (the "License");
@@ -12,12 +13,11 @@
 package com.gerritforge.gerrit.plugins.ai.gemini;
 
 import com.gerritforge.gerrit.plugins.ai.provider.api.AiReviewProvider;
-import com.google.gerrit.extensions.registration.DynamicSet;
+import com.google.gerrit.extensions.registration.DynamicItem;
 import com.google.inject.AbstractModule;
+import com.google.inject.Scopes;
 
-import java.util.Set;
-
-public class GeminiReviewProviderModule extends AbstractModule {
+public class AiReviewProviderModule extends AbstractModule {
 
   @Override
   protected void configure() {
@@ -26,3 +26,5 @@ public class GeminiReviewProviderModule extends AbstractModule {
         .in(Scopes.SINGLETON);
   }
 }
+=======
+>>>>>>> BASE      (fb72521809781b5d23dff785c24ae4787ed73c67 Move the Gerrit ai-review-agent UI out of the plugin)
