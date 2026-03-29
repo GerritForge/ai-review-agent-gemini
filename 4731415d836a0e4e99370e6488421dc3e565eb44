@@ -51,6 +51,29 @@
       "message": "Should we start using Bazel modules? On Gerrit@HEAD I already removed the `maven_jar` legacy toolchain: [1]. This can be done as follow-up change or later.\n\n[1]: https://gerrit-review.googlesource.com/c/gerrit/+/566203",
       "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3b7a99b_66a36186",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-03-29T18:42:11Z",
+      "side": 1,
+      "message": "Looking at Maven Central, the Gemini SDK pulls in a massive transitive dependency tree (Jackson, OkHttp, Okio, and the Kotlin runtime): [1], which is overkill for a single provider call.\n\nTo keep the plugin lightweight and avoid potential classpath conflicts with Gerrit core, we can replace the SDK with a lean REST call using the Apache HttpClient already available in the Gerrit runtime:\n\nhttps://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key\u003d%s\n\nSimilar to how it was in the original version, as it was called from JS. This requires manual JSON parsing, though.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
