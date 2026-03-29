@@ -34,6 +34,23 @@
       "parentUuid": "4aa5a59b_90c44c97",
       "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5910656_6e90e0c6",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-03-29T16:59:26Z",
+      "side": 1,
+      "message": "Should we start using Bazel modules? On Gerrit@HEAD I already removed the `maven_jar` legacy toolchain: [1]. This can be done as follow-up change or later.\n\n[1]: https://gerrit-review.googlesource.com/c/gerrit/+/566203",
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
