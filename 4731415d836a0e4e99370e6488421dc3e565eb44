@@ -16,6 +16,24 @@
       "message": "The `Verified: -1` is expected because the dependent changes on the ai-review-agent-provider aren\u0027t merged yet.",
       "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc0717fb_63d505b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-03-29T16:57:23Z",
+      "side": 1,
+      "message": "We should implement `Depends-On` footer, similar to Zuul.",
+      "parentUuid": "4aa5a59b_90c44c97",
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
