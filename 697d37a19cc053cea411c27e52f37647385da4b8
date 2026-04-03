@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50164fbd_97e587ee",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-04-03T22:54:29Z",
+      "side": 1,
+      "message": "I\u0027d prefer to limit this change to removing the UI and not refactor the BUILD file if isn\u0027t strictly needed.",
+      "parentUuid": "c8cbb68b_0c249f85",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 45
+      },
+      "revId": "697d37a19cc053cea411c27e52f37647385da4b8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ab2367a_18331f75",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6081aeef_f3a513b6",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-04-03T22:54:29Z",
+      "side": 1,
+      "message": "I\u0027d prefer to limit this change to removing the UI and not refactor the BUILD file if isn\u0027t strictly needed.",
+      "parentUuid": "8ab2367a_18331f75",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 44
+      },
+      "revId": "697d37a19cc053cea411c27e52f37647385da4b8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ab52a3c_ef0c6f89",
@@ -60,6 +108,30 @@
       "writtenOn": "2026-03-29T17:02:01Z",
       "side": 1,
       "message": "This is a no-op, because all tests were removed. Remove this as well?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 1
+      },
+      "revId": "697d37a19cc053cea411c27e52f37647385da4b8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "361d5f2f_bae31c45",
+        "filename": "BUILD",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-04-03T22:54:29Z",
+      "side": 1,
+      "message": "I\u0027d prefer to leave the test target and add some initial basic tests.",
+      "parentUuid": "0ab52a3c_ef0c6f89",
       "range": {
         "startLine": 30,
         "startChar": 0,
