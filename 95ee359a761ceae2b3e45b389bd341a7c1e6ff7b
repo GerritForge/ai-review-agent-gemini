@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d28cf0fc_424492c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-08T18:32:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c7d5c7b_2b154e66",
+      "revId": "95ee359a761ceae2b3e45b389bd341a7c1e6ff7b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "79e3fc5b_1a873421",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/GeminiReviewProviderModule.java",
         "patchSetId": 7

@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18af486f_e5aad1d3",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-08T18:32:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5910656_6e90e0c6",
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3b7a99b_66a36186",
@@ -90,6 +108,30 @@
       "side": 1,
       "message": "Let me try calling the API directly.",
       "parentUuid": "e3b7a99b_66a36186",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "4731415d836a0e4e99370e6488421dc3e565eb44",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11336b9a_619f96ac",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-08T18:32:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "166b4fbf_fb6dca87",
       "range": {
         "startLine": 9,
         "startChar": 4,
