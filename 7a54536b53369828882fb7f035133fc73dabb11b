@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53107d96_4ae065b1",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiGeminiReviewProvider.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-09T10:01:10Z",
+      "side": 1,
+      "message": "nit: use stable `v1` instead of `v1beta`",
+      "range": {
+        "startLine": 36,
+        "startChar": 49,
+        "endLine": 36,
+        "endChar": 55
+      },
+      "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a70aa9fc_e5f890ea",
@@ -24,6 +47,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42b14bf4_91817ee4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiGeminiReviewProvider.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-09T10:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a70aa9fc_e5f890ea",
+      "range": {
+        "startLine": 87,
+        "startChar": 2,
+        "endLine": 97,
+        "endChar": 3
+      },
+      "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06655100_46b66d9c",
@@ -37,6 +84,24 @@
       "writtenOn": "2026-04-09T03:31:28Z",
       "side": 1,
       "message": "Optionally, we could apply the same approach to the response parsing and map the relevant parts of the Gemini response to small POJOs as well. That would make extractResponseText() a bit cleaner and more type-safe, although the benefit is less immediate than on the request side since we currently only read a limited subset of the response fields.",
+      "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0339c01c_beaa0ef0",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiGeminiReviewProvider.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-09T10:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06655100_46b66d9c",
       "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
