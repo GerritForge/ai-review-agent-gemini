@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50c81412_df63fa5b",
+        "filename": "BUILD",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-09T14:29:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c9ea316_5fddf994",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 45
+      },
+      "revId": "39b3d9064cd0a8c6be544739b33c9aa4b7b82870",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f85186db_289ee3f5",
@@ -54,6 +78,30 @@
       "writtenOn": "2026-04-09T13:36:39Z",
       "side": 1,
       "message": "Shouldn\u0027t be needed: this is included in the `release.war´ and exposed in the plugin API:\n\n```bash\n  $\u003e git grep -E \u0027:gson|httpclient\u0027 plugins/BUILD\nplugins/BUILD:    \"//lib/httpcomponents:httpclient\",\nplugins/BUILD:    \"//lib:gson\",\n```",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 42
+      },
+      "revId": "39b3d9064cd0a8c6be544739b33c9aa4b7b82870",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "422fb76c_bbb6f504",
+        "filename": "BUILD",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-09T14:29:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f85186db_289ee3f5",
       "range": {
         "startLine": 24,
         "startChar": 8,
