@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a70aa9fc_e5f890ea",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiGeminiReviewProvider.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-04-09T03:31:28Z",
+      "side": 1,
+      "message": "Consider introducing a dedicated POJO for the Gemini input request payload. That would make the contents/parts/text structure more explicit and simplify JSON serialization compared to the current manual JsonObject construction?\n\nSo may be something like this:\n\n```java\npublic class GenerateContentRequest {\n  @SerializedName(\"contents\")\n  private final List\u003cContent\u003e contents;\n\n  public GenerateContentRequest(List\u003cContent\u003e contents) {\n    this.contents \u003d contents;\n  }\n\n  public static GenerateContentRequest fromPrompt(String prompt) {\n    return new GenerateContentRequest(\n        List.of(new Content(List.of(new Part(prompt)))));\n  }\n\n  public List\u003cContent\u003e getContents() {\n    return contents;\n  }\n\n  public static class Content {\n    @SerializedName(\"parts\")\n    private final List\u003cPart\u003e parts;\n\n    public Content(List\u003cPart\u003e parts) {\n      this.parts \u003d parts;\n    }\n\n    public List\u003cPart\u003e getParts() {\n      return parts;\n    }\n  }\n\n  public static class Part {\n    @SerializedName(\"text\")\n    private final String text;\n\n    public Part(String text) {\n      this.text \u003d text;\n    }\n\n    public String getText() {\n      return text;\n    }\n  }\n}\n```\n\nThen: this method can be replaced with one liner:\n\n\n```java\nGenerateContentRequest requestBody \u003d GenerateContentRequest.fromPrompt(prompt);\n```",
+      "range": {
+        "startLine": 87,
+        "startChar": 2,
+        "endLine": 97,
+        "endChar": 3
+      },
+      "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06655100_46b66d9c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/ai/gemini/AiGeminiReviewProvider.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-04-09T03:31:28Z",
+      "side": 1,
+      "message": "Optionally, we could apply the same approach to the response parsing and map the relevant parts of the Gemini response to small POJOs as well. That would make extractResponseText() a bit cleaner and more type-safe, although the benefit is less immediate than on the request side since we currently only read a limited subset of the response fields.",
+      "revId": "7a54536b53369828882fb7f035133fc73dabb11b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
