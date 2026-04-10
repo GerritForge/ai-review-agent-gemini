@@ -22,6 +22,46 @@
       },
       "revId": "fe0ff19eb4b6ce04c995c4be825d52b93d396361",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ade91411_03496f96",
+        "filename": "BUILD",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-10T06:05:43Z",
+      "side": 1,
+      "message": "nit: there is no need to depend on the plugin as all we need is `ai-review-agent-provider-api`",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 43
+      },
+      "revId": "fe0ff19eb4b6ce04c995c4be825d52b93d396361",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a44d484_abdbf113",
+        "filename": "BUILD",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2026-04-10T06:05:43Z",
+      "side": 1,
+      "message": "nit: same as above",
+      "revId": "fe0ff19eb4b6ce04c995c4be825d52b93d396361",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
