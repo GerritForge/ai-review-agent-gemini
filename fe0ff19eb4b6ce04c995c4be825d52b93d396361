@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fe08f95_e2fbb678",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-04-10T05:50:14Z",
+      "side": 1,
+      "message": "The current commit message feels a bit misleading, because it describes the difference between patch sets of the same change rather than the final change itself. Could you rephrase it to describe the resulting implementation more directly?\n\nFor example:\n\n```\nCall Gemini API via REST with Apache HttpClient and Gson\n\nAccess the Gemini API with a direct HTTP POST to the \ngenerateContent REST endpoint using Apache HttpClient and Gson.\n\n[...]\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 40
+      },
+      "revId": "fe0ff19eb4b6ce04c995c4be825d52b93d396361",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
