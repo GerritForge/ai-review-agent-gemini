@@ -13,7 +13,7 @@ gerrit_plugin(
     ],
     resources = glob(["src/main/resources/**/*"]),
     deps = [
-        ":ai-review-agent-provider-neverlink",
+        "//plugins/ai-review-agent-provider:ai-review-agent-provider-api",
     ],
 )
 
@@ -26,10 +26,4 @@ gerrit_plugin_tests(
         ":ai-review-agent-gemini__plugin",
         "//plugins/ai-review-agent-provider:ai-review-agent-provider-api",
     ],
-)
-
-java_library(
-    name = "ai-review-agent-provider-neverlink",
-    neverlink = True,
-    exports = ["//plugins/ai-review-agent-provider:ai-review-agent-provider-api"],
 )
